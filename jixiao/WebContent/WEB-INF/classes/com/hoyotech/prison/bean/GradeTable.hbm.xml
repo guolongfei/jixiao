@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="GradeTable" table="GRADE_TABLE">
+        <comment></comment>
+		<id name="gradeId" column="grade_Id">
+   			<generator class="uuid.hex" />
+		</id>
+		
+		<many-to-one name="peopleId" class="JX_People" fetch="select" lazy="false" not-found="ignore">
+            <column name="PEOPLE_ID" not-null="false" />
+        </many-to-one>
+        
+        <many-to-one name="departmentId" class="JX_Department" fetch="select" lazy="false" not-found="ignore">
+            <column name="DEP_ID" not-null="false" />
+        </many-to-one>
+        
+        <many-to-one name="gradeTypeId" class="GradeTypeTable" fetch="select" lazy="false" not-found="ignore">
+            <column name="GRADE_TYPE_ID" not-null="false" />
+        </many-to-one>
+        
+        <many-to-one name="postId" class="PostTable" fetch="select" lazy="false" not-found="ignore">
+            <column name="POST_ID" not-null="false" />
+        </many-to-one>
+        <property name="gradeDate" type="date">
+            <column name="GRADE_DATE" not-null="true">
+                <comment></comment>
+            </column>
+        </property> 
+        <property name="gradeScore" type="string">
+            <column name="grade_Score" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

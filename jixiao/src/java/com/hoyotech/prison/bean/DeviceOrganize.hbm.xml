@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="DeviceOrganize" table="device_organize">
+        <comment></comment>
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+        <property name="orgName" type="string">
+            <column name="org_name" length="200" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="parentOrdId" type="int">
+            <column name="parent_ordId" length="20" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="type" type="int">
+            <column name="type">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="state" type="int">
+            <column name="state">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="level" type="int">
+            <column name="level">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="telephone" type="string">
+            <column name="telephone" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="orgDesc" type="string">
+            <column name="org_desc" length="150">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="reserve1" type="string">
+            <column name="reserve1" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="reserve2" type="string">
+            <column name="reserve2" length="50" />
+        </property>
+        <property name="reserve3" type="string">
+            <column name="reserve3" length="50"/>
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="DeepCrime" table="deep_crime">
+		<comment></comment>
+		<id name="id" column="id">
+			<generator class="uuid.hex" />
+		</id>
+		
+		<property name="time" type="date">
+			<column name="time" not-null="false" />
+		</property>
+		 <many-to-one name="name" class="Prisoner" fetch="select" lazy="false">
+            <column name="name" not-null="false" />
+        </many-to-one>
+        <property name="policer" type="string">
+			<column name="policer" not-null="false" />
+		</property>
+		<property name="content" type="string">
+			<column name="content" length="255">
+			</column>
+		</property>
+		<property name="checker" type="string">
+			<column name="checker" >
+			</column>
+		</property>
+		<property name="passTime" type="date">
+			<column name="pass_time" not-null="false" />
+		</property>
+		<property name="unit" type="string">
+			<column name="unit" not-null="false" />
+		</property>
+		<property name="backTime" type="date">
+			<column name="back_time" not-null="false" />
+		</property>
+		<property name="caseCount" type="int">
+			<column name="case_count" not-null="false" />
+		</property>
+		<property name="chase" type="int">
+			<column name="chase" not-null="false" />
+		</property>
+		<property name="find" type="int">
+			<column name="find" not-null="false" />
+		</property>
+		<property name="money" type="int">
+			<column name="money" not-null="false" />
+		</property>
+		<property name="state" type="int">
+			<column name="state" length="1" not-null="true" default="1">
+			</column>
+		</property>
+		<property name="updateTime" type="java.util.Date">
+			<column name="update_time" not-null="false" />
+		</property>
+		<property name="addTime" type="java.util.Date">
+			<column name="add_time" not-null="true" />
+		</property>
+		<property name="prisonCode" type="java.lang.String">
+			<column name="prison_code" not-null="false" />
+		</property>
+		<property name="isSync" type="int">
+			<column name="is_sync" length="1" />
+		</property>
+	</class>
+</hibernate-mapping>

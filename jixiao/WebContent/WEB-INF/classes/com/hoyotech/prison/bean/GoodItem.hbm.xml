@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="GoodItem" table="goodItem">
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+        <property name="itemName" type="string">
+            <column name="item_name" length="50" />
+        </property>
+        <property name="itemType" type="int">
+            <column name="item_type" length="1" />
+        </property>
+        <property name="itemUnit" type="string">
+            <column name="item_unit" length="5" />
+        </property>
+        <property name="itemPrice" type="java.math.BigDecimal">
+            <column name="item_price"  precision="16" scale="2"/>
+        </property>
+        <property name="itemNum" type="int">
+            <column name="item_num"/>
+        </property>
+        <property name="itemCode" type="string">
+            <column name="item_code" length="50"/>
+        </property>
+        <property name="addTime" type="java.util.Date">
+            <column name="add_time" not-null="true" />
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time" />
+        </property>
+        <property name="prisonCode" type="string">
+            <column name="prison_code" />
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

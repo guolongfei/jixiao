@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire="byName"
+ xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!--所有的连接数据库的dao类都必须在此定义，service类中初始化dao类的变量名必须和这里的id相同 -->
+	<bean id="dao" class="com.hoyotech.prison.dao.impl.BasicDao"></bean>
+	<bean id="dictionaryDao" class="com.hoyotech.prison.dao.impl.DictionaryDao"></bean>	
+</beans>

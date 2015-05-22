@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="HandOver" table="hand_over">
+		<comment></comment>
+		<id name="id" column="id">
+			<generator class="uuid.hex" />
+		</id>
+		<property name="time" type="java.util.Date">
+			<column name="time" not-null="false" />
+		</property>
+		<many-to-one name="dutyName" class="Police" fetch="select" lazy="false">
+            <column name="duty_name" not-null="false" />
+        </many-to-one>
+        <many-to-one name="dutyLeader" class="Police" fetch="select" lazy="false">
+            <column name="duty_leader" not-null="false" />
+        </many-to-one>
+		<property name="jiebanNum" type="int">
+			<column name="jieban_num">
+			</column>
+		</property>
+		<property name="inNum" type="int">
+			<column name="in_num">
+			</column>
+		</property>
+		<property name="outNum" type="int">
+			<column name="out_num">
+			</column>
+		</property>
+		<property name="jiaobanNum" type="int">
+			<column name="jiaoban_num">
+			</column>
+		</property>
+		<property name="monitorContent" type="string">
+			<column name="monitor_content">
+			</column>
+		</property>
+		<property name="workRecord" type="string">
+			<column name="work_record">
+			</column>
+		</property>
+		<property name="instructions" type="string">
+			<column name="instructions">
+			</column>
+		</property>
+		<property name="matters" type="string">
+			<column name="matters">
+			</column>
+		</property>
+		<many-to-one name="jiebanren" class="Police" fetch="select" lazy="false">
+            <column name="jiebanren" not-null="false" />
+        </many-to-one>
+		<property name="state" type="int">
+			<column name="state" length="1" not-null="true" default="1">
+			</column>
+		</property>
+		<property name="updateTime" type="java.util.Date">
+			<column name="update_time" not-null="false" />
+		</property>
+		<property name="addTime" type="java.util.Date">
+			<column name="add_time" not-null="true" />
+		</property>
+		<property name="prisonCode" type="java.lang.String">
+			<column name="prison_code" not-null="false" />
+		</property>
+		<property name="isSync" type="int">
+			<column name="is_sync" length="1" />
+		</property>
+		
+<!--		刘泉-->
+		<property name="dutyDoctor" type="string">
+			<column name="duty_doctor"></column>
+		</property>
+		<property name="dutyManager" type="string">
+			<column name="duty_Manager"></column>
+		</property>
+		<property name="dutyOnbudsman" type="string">
+			<column name="duty_Onbudsman"></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

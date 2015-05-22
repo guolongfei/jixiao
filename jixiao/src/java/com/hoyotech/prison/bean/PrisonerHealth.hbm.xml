@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="PrisonerHealth" table="prisoner_health">
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+		<property name="noYear" type="string">
+            <column name="no_year" length="50" />
+        </property>
+        <property name="noNumber" type="string">
+            <column name="no_number" length="50" />
+        </property>
+        <property name="height" type="string">
+            <column name="height" length="50" />
+        </property>
+        <property name="weight" type="string">
+            <column name="weight" length="50" />
+        </property>
+        <many-to-one name="prisoner" class="Prisoner" fetch="select" lazy="false">
+            <column name="prisoner_id" />
+        </many-to-one>
+        <many-to-one name="drugHistory" class="Dictionary" fetch="select" lazy="false">
+            <column name="drug_history" />
+        </many-to-one>
+        <many-to-one name="isInfection" class="Dictionary" fetch="select" lazy="false">
+            <column name="is_infection" />
+        </many-to-one>
+        <property name="medicalHistory" type="string">
+            <column name="medical_history" length="255" />
+        </property>        
+        <property name="pregnancyExam" type="string">
+            <column name="pregnancy_exam" />
+        </property>
+        <property name="selfSymptoms" type="string">
+            <column name="self_symptoms" />
+        </property>
+        <property name="externalCondition" type="string">
+            <column name="external_condition" />
+        </property>
+        <property name="internalCondition" type="string">
+            <column name="internal_condition" />
+        </property>
+        <property name="senderAutograph" type="string">
+            <column name="sender_autograph" length="50" />
+        </property>
+         <many-to-one name="examinerAutograph" class="Medical" fetch="select" lazy="false">
+            <column name="examiner_autograph" />
+        </many-to-one>
+        <property name="doctorAdvice" type="string">
+            <column name="doctor_advice" />
+        </property>
+         <many-to-one name="doctorAutograph" class="Medical" fetch="select" lazy="false">
+            <column name="doctor_autograph" />
+        </many-to-one>
+        <property name="doctorAdviceDate" type="timestamp">
+            <column name="doctor_advice_date" length="23" />
+        </property>
+       <property name="policeAdvice" type="string">
+            <column name="police_advice" />
+        </property>
+        <many-to-one name="policeAutograph" class="Police" fetch="select" lazy="false">
+            <column name="police_autograph" not-null="false" />
+        </many-to-one>
+        <property name="policeAdviceDate" type="timestamp">
+            <column name="police_advice_date" length="23" />
+        </property>
+        <property name="leaderAdvice" type="string">
+            <column name="leader_advice" />
+        </property>
+        <many-to-one name="leaderAutograph" class="Police" fetch="select" lazy="false">
+            <column name="leader_autograph" not-null="false" />
+        </many-to-one>
+        <property name="leaderAdviceDate" type="timestamp">
+            <column name="leader_advice_date" length="23" />
+        </property>
+        <property name="addTime" type="java.util.Date">
+            <column name="add_time" length="23" not-null="true" />
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time" />
+        </property>
+        <property name="prisonCode" type="java.lang.String">
+            <column name="prison_code" />
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

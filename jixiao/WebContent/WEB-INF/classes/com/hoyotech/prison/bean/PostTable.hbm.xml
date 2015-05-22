@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="PostTable" table="POST_TABLE">
+        <comment></comment>		
+		<id name="postId" type="java.lang.Integer">
+            <column name="POST_ID" />
+		</id>
+        <property name="postName" type="string">
+            <column name="POST_Name" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>		

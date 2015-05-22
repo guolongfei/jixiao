@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="DetentionArea" table="detention_area">
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+        <many-to-one name="prisonInfo" class="PrisonInfo" fetch="select" lazy="false">
+            <column name="prison_id" not-null="true" />
+        </many-to-one>
+        <property name="areaCode" type="java.lang.String">
+            <column name="area_code" length="50" />
+        </property>
+        <property name="detentionArea" type="java.lang.String">
+            <column name="detention_area" length="50" not-null="true" />
+        </property>
+        <property name="detentionDesc" type="java.lang.String">
+            <column name="detention_desc" not-null="true" />
+        </property>
+        <property name="state" type="java.lang.Integer">
+            <column name="state" not-null="true" />
+        </property>
+        <property name="addTime" type="java.util.Date">
+            <column name="add_time" length="23" not-null="true" />
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time" length="23" />
+        </property>
+        <property name="prisonCode" type="java.lang.String">
+            <column name="prison_code" length="50" not-null="true" />
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+        
+<!--        刘泉-->
+		<property name="areaPrisonerNum" type="java.lang.Integer">
+            <column name="area_prisoner_num"/>
+        </property>
+    </class>
+</hibernate-mapping>

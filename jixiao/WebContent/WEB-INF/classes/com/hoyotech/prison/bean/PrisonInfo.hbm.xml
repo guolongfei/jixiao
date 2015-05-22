@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="PrisonInfo" table="prisonInfo">
+        <comment></comment>
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+        <property name="prisonCode" type="string">
+            <column name="prison_code" length="9" not-null="true">
+                <comment>&#188;&#224;&#203;&#249;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="publicSecurityOrganCode" type="string">
+            <column name="public_security_organ_code" length="12" not-null="true">
+                <comment>&#190;&#208;&#193;&#244;&#203;&#249;&#185;&#171;&#176;&#178;&#187;&#250;&#185;&#216;&#180;&#250;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="prisonName" type="string">
+            <column name="prison_name" length="80" not-null="true">
+                <comment>&#188;&#224;&#203;&#249;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <many-to-one name="area" class="Area" fetch="select" lazy="false">
+            <column name="area_id">
+                <comment>&#208;&#208;&#213;&#254;&#199;&#248;&#211;&#242;&#180;&#250;&#194;&#235;</comment>
+            </column>
+        </many-to-one>
+        <property name="address" type="string">
+            <column name="address" length="80" not-null="true">
+                <comment>&#207;&#234;&#207;&#184;&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="telephone" type="string">
+            <column name="telephone" length="20" not-null="true">
+                <comment>&#181;&#231;&#187;&#176;</comment>
+            </column>
+        </property>
+        <property name="fax" type="string">
+            <column name="fax" length="20" not-null="false">
+                <comment>&#213;&#230;&#180;&#171;</comment>
+            </column>
+        </property>
+        <property name="zipCode" type="int">
+            <column name="zip_code" length="6" not-null="false">
+                <comment>&#211;&#202;&#213;&#254;&#177;&#224;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="50" not-null="false">
+                <comment>&#181;&#231;&#215;&#211;&#211;&#202;&#207;&#228;</comment>
+            </column>
+        </property>
+        <property name="prisonheadsName" type="string">
+            <column name="prisonheads_name" length="60" not-null="true">
+                <comment>&#214;&#247;&#210;&#170;&#184;&#186;&#212;&#240;&#200;&#203;&#208;&#213;&#195;&#251;</comment>
+            </column>
+        </property>
+        <many-to-one name="prisonLevel" class="Dictionary" fetch="select" lazy="false">
+            <column name="prison_level" length="1" not-null="true">
+                <comment>&#190;&#208;&#193;&#244;&#203;&#249;&#181;&#200;&#188;&#182;</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="prisonSize" class="Dictionary" fetch="select" lazy="false">
+            <column name="prison_size" length="1" not-null="true">
+                <comment>&#190;&#208;&#193;&#244;&#203;&#249;&#185;&#230;&#196;&#163;</comment>
+            </column>
+        </many-to-one>
+        <property name="policeNum" type="int">
+            <column name="police_num" length="3" not-null="true">
+                <comment>&#195;&#241;&#190;&#175;&#215;&#220;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="preparationNum" type="int">
+            <column name="preparation_num" length="3" not-null="true">
+                <comment>&#177;&#224;&#214;&#198;&#200;&#203;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="cellNum" type="int">
+            <column name="cell_num" length="3" not-null="true">
+                <comment>&#190;&#208;&#202;&#210;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="designCapacity" type="int">
+            <column name="design_capacity" length="4" not-null="true">
+                <comment>&#201;&#232;&#188;&#198;&#200;&#221;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="state" type="int">
+            <column name="state" length="1" not-null="true" default="1">
+            </column>
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time" not-null="false" />
+        </property>
+        <property name="addTime" type="java.util.Date">
+            <column name="add_time" not-null="true" />
+        </property>
+        <many-to-one name="org" class="Organization" fetch="select" lazy="false">
+            <column name="org_id" length="1" not-null="true"></column>
+        </many-to-one>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+         <property name="prisonImage" type="image">
+            <column name="prison_image"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+body {
+background:none repeat scroll 0 0 white;
+margin:0 auto;
+padding:0;
+line-height:170%;
+text-align:center;
+}
+li{ list-style:none; }
+.menu{width:960px;height:30px;background:url(/ylpt/image/daohang_bg.gif) repeat-x; margin:0 auto;text-align:center;}
+.menu ul{ width:960px;float:left; display:inline;margin:0px;padding:0px;}
+.menu ul li{ width:82px;float:left;display:inline; margin:0 1px;}
+.menu ul li a{width:96px;height:26px;float:left; font-size:12px;
+text-align:center;margin:2px 0;font-family:NSimSun;
+line-height:26px; color:#fff; text-decoration:none;}
+.menu ul li a:hover{background:#89c1ff; }

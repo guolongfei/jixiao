@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+   	<import resource="action.xml"/>
+ 	<import resource="dao.xml"/>
+    <import resource="service.xml"/>
+
+	<!-- 数据源配置 -->
+	<bean id="candy" class="org.apache.commons.dbcp.BasicDataSource" >
+	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+	<!--公司测试配置-->
+   <property name="url" value="jdbc:oracle:thin:@59.173.12.221/orcl"></property>
+    <!--<property name="username" value="jixiao"></property> -->
+    <!--<property name="password" value="jixiao"></property> -->
+	<property name="username" value="WEBRTC"></property>
+    <property name="password" value="WEBRTC"></property>
+
+	
+	</bean>
+    <!--sessionFactory配置 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+	<property name="dataSource">
+		<ref bean="candy"/>
+	</property>
+	<property name="hibernateProperties">
+		<props> 
+			<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+<!--			反向生成表-->
+<!--			<prop key="hibernate.hbm2ddl.auto">update</prop>-->
+			 <!--打开二级缓存--> 
+			 <prop key="hibernate.cache.use_second_level_cache">true</prop>   
+			 <!-- 设置Hibernate的缓存接口类，这个类在Hibernate包中 --> 
+			 <prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop> 
+			 <!-- 是否使用查询缓存 -->   
+			 <prop key="hibernate.cache.use_query_cache">true</prop>    		
+			<prop key="hibernate.show_sql">false</prop>
+			<prop key="hibernate.format_sql">false</prop>
+		</props>
+	</property>
+	<property name="mappingResources">
+		<list>
+			<value>com/hoyotech/prison/bean/PrisonInfo.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Dictionary.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Prisoner.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Organization.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Police.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Device.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/PrisonDevice.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Car.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Medical.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Peoples.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Civilian.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Logistic.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/DetentionArea.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/DetentionInfo.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Document.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Nationality.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Career.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/ContrabandGoods.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/PrisonerContrabandGoods.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Goods.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/PrisonerGoods.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/PrisonerHealth.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/StopDetain.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Area.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/OutPrison.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/LeaveExpires.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/ExecutionDetain.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/ExecuteReturn.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/SendExamine.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/User.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Role.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Permission.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/RolePermission.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/UseWeapon.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/AskRegistration.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Arraign.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/AppealDataPass.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/DeathNotice.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/RemoveDetain.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/HandleSeparate.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/WrongDetain.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/DetainReturn.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/RefuseDetain.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/CrimeKeyPass.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/UserRole.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Memcon.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/MemconContent.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/UserDetention.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/UserDuty.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/SysUsers.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/FailureAlarm.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/DeviceOrganize.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/DevChnInfo.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/PrisonerImage.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/WorkUnit.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/IdentityAddress.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/JiangCheng.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/UserPowerZD.hbm.xml</value> 			
+			<!-- 以下是台账的表 -->
+			<value>com/hoyotech/prison/bean/Interview.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/DeepCrime.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Doctor.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/OutDoctor.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/StrictManage.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/DaiShou.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Emergency.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/SafeCheck.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Inspect.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Education.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/Reception.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/HandOver.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/MeetingRecord.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/AnalysisMeeting.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/SocietyOpen.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/HandleConflict.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/TalkEducation.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/PatrolRecord.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/RiskAssess.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/FingerPrint.hbm.xml</value>
+			<!-- 日志 -->
+			<value>com/hoyotech/prison/log/Message.hbm.xml</value>
+			
+			<value>com/hoyotech/prison/bean/GoodItem.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/GoodSell.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/sthIn.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/DrugManage.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/DrugType.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/TakeMedicine.hbm.xml</value>
+			 
+<!--			卢志明2015年1月19日-->
+            <value>com/hoyotech/prison/bean/MessageReleases.hbm.xml</value>
+            <value>com/hoyotech/prison/bean/MessageType.hbm.xml</value>
+            <value>com/hoyotech/prison/bean/Achievement.hbm.xml</value>
+            <value>com/hoyotech/prison/bean/InexepensiveText.hbm.xml</value>
+            <value>com/hoyotech/prison/bean/RuleType.hbm.xml</value>
+            <value>com/hoyotech/prison/bean/Comment.hbm.xml</value>
+            <value>com/hoyotech/prison/bean/AttachedFile.hbm.xml</value>
+            <value>com/hoyotech/prison/bean/SpecialScore.hbm.xml</value>
+            <!-- 绩效表映射的bean -->
+             <value>com/hoyotech/prison/bean/Performance.hbm.xml</value>
+             <value>com/hoyotech/prison/bean/Evaluation.hbm.xml</value>
+             <value>com/hoyotech/prison/bean/Quarter.hbm.xml</value>
+             <value>com/hoyotech/prison/bean/basicsetup.hbm.xml</value>
+             <!-- 邵云波2015年1月22日-->
+             <value>com/hoyotech/prison/bean/RecordTable.hbm.xml</value>
+             <value>com/hoyotech/prison/bean/GradeTable.hbm.xml</value>
+             <value>com/hoyotech/prison/bean/GradeTypeTable.hbm.xml</value>
+             <value>com/hoyotech/prison/bean/PostTable.hbm.xml</value>
+             <value>com/hoyotech/prison/bean/InternalVote.hbm.xml</value>
+<!--             刘泉2015年1月24日-->
+			<value>com/hoyotech/prison/bean/JX_Department.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/JX_People.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/JX_User.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/JX_UserRole.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/JX_Role.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/JX_RolePermission.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/JX_Permission.hbm.xml</value>			
+	<!-- 闵高 2015-3-17日 考核细则表 -->
+			<value>com/hoyotech/prison/bean/JX_Details.hbm.xml</value>
+			<value>com/hoyotech/prison/bean/JX_Appraise.hbm.xml</value>
+	<!--卢志明2015年4月8日   房间管理-->
+	        <value>com/hoyotech/prison/bean/Room.hbm.xml</value>
+            <value>com/hoyotech/prison/bean/RoomDetail.hbm.xml</value>
+		</list>
+	</property>
+	</bean>	
+
+	<!-- 定时器 ，获取当前在线人数-->
+	<bean id="onlien" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+	<property name="targetObject" ref="OnLine_Test"></property><!-- 指定任务类 -->
+	<property name="targetMethod" value="getNumber"></property><!-- 指定任务方法 -->
+	</bean>
+	<bean id="timeOnline" class="org.springframework.scheduling.quartz.CronTriggerBean">
+	<property name="jobDetail" ref="onlien"></property>
+	<property name="cronExpression">
+	<value>0/10 * * * * ?</value>
+	</property>
+	</bean>
+	<bean id="obj" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	<property name="triggers">
+	<list>
+	<ref bean="timeOnline"/>  
+	</list>
+	</property>
+	</bean>   
+
+	
+	<!-- 自动加入日记载定时器 -->
+	<!-- <bean id="myTimer" class="com.hoyotech.prison.action.PerformanceAction">
+	</bean> -->
+	<bean id="timeDitail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+	<property name="targetObject" ref="PerformanceAction"></property><!-- 指定任务类 -->
+	<property name="targetMethod" value="bookTime1"></property><!-- 指定任务方法 -->
+	</bean>
+	<bean id="timeTigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+	<property name="jobDetail" ref="timeDitail"></property>
+	<property name="cronExpression">
+	<value>0 5 0 * * ?</value>
+	</property>
+	</bean>
+	<bean id="startJob" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	<property name="triggers">
+	<list>
+	<ref bean="timeTigger"/>  
+	</list>
+	</property>
+	</bean>
+
+</beans>

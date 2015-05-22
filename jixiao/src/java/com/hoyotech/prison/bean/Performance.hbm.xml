@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="Performance" table="PERFORMANCE">
+		<comment></comment>
+		<id name="performanceId" column="performanceId">
+			<generator class="uuid" />
+		</id>
+		<property name="employeeId" type="string">
+			<column name="employeeId" />
+		</property>
+		<property name="performance_content" type="string">
+			<column name="performance_content" length="4000"/>
+		</property>
+		<property name="performance_date" type="date">
+			<column name="performance_date" />
+		</property>
+		<property name="performance_type" type="int">
+			<column name="performance_type" />
+		</property>
+		<property name="season_type" type="java.lang.Integer">
+			<column name="season_type" />
+		</property>
+	</class>
+</hibernate-mapping>

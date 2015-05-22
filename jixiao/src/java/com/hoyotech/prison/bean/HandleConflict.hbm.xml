@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="HandleConflict" table="handle_conflict">
+		<comment></comment>
+		<id name="id" column="id">
+			<generator class="uuid.hex" />
+		</id>
+		<property name="time" type="java.util.Date">
+			<column name="time" not-null="false" />
+		</property>
+		<property name="recorder" type="string">
+			<column name="recorder">
+			</column>
+		</property>
+		<property name="prisoner1" type="string">
+			<column name="prisoner1">
+			</column>
+		</property>
+		<property name="reason1" type="string">
+			<column name="reason1">
+			</column>
+		</property>
+		<property name="deadline1" type="string">
+			<column name="deadline1">
+			</column>
+		</property>
+		<property name="prisoner2" type="string">
+			<column name="prisoner2">
+			</column>
+		</property>
+		<property name="reason2" type="string">
+			<column name="reason2">
+			</column>
+		</property>
+		<property name="deadline2" type="string">
+			<column name="deadline2">
+			</column>
+		</property>
+		<property name="situation" type="string">
+			<column name="situation">
+			</column>
+		</property>
+		<property name="conflictSituation" type="string">
+			<column name="conflictSituation">
+			</column>
+		</property>
+		<property name="nameUnit" type="string">
+			<column name="nameUnit">
+			</column>
+		</property>
+		<property name="head" type="string">
+			<column name="head">
+			</column>
+		</property>
+		<property name="handle" type="string">
+			<column name="handle">
+			</column>
+		</property>
+		<property name="result" type="string">
+			<column name="result">
+			</column>
+		</property>
+		<property name="state" type="int">
+			<column name="state" length="1" not-null="true" default="1">
+			</column>
+		</property>
+		<property name="updateTime" type="java.util.Date">
+			<column name="update_time" not-null="false" />
+		</property>
+		<property name="addTime" type="java.util.Date">
+			<column name="add_time" not-null="true" />
+		</property>
+		<property name="prisonCode" type="java.lang.String">
+			<column name="prison_code" not-null="false" />
+		</property>
+		<property name="isSync" type="int">
+			<column name="is_sync" length="1" />
+		</property>
+	</class>
+</hibernate-mapping>

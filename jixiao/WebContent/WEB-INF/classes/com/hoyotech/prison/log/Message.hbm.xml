@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="com.hoyotech.prison.log">
+	<class name="Message" table="log_message">
+		<comment></comment>
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+		<property name="time" type="java.util.Date">
+            <column name="time" />
+        </property>
+        <property name="userName" type="string">
+            <column name="user_name" length="50" default=""/>
+        </property>
+        <property name="realName" type="string">
+            <column name="real_name" length="50" />
+        </property>
+        <property name="moduleId" type="string">
+            <column name="module_id" length="50" />
+        </property>
+ 		<property name="moduleName" type="string">
+            <column name="module_name" length="50" />
+        </property>
+        <property name="operate" type="string">
+            <column name="operate" length="1000" />
+        </property>
+        <property name="operateId" type="int">
+            <column name="operate_id" length="1" />
+        </property>
+        <property name="ip" type="string">
+            <column name="ip" length="50" default=""/>
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="50" default=""/>
+        </property>
+        <property name="state" type="int">
+            <column name="state" length="1" not-null="true" />
+        </property>
+        <property name="sysMark" type="int">
+            <column name="sys_mark" length="1" not-null="true" />
+        </property>
+        <property name="prisonCode" type="string">
+            <column name="prison_code" />
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+	</class>
+</hibernate-mapping>

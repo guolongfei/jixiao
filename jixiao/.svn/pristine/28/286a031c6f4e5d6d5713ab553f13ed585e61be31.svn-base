@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+  
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="JX_Role" table="JX_Role">
+		<comment></comment>
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+		<property name="name" type="string">
+            <column name="rolename" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="department_id" type="string">
+            <column name="department_id" length="128">
+                <comment></comment>
+            </column>
+        </property>
+         <set name="rolePer" inverse="true" lazy="false">
+            <key>
+                <column name="role_id" not-null="false">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="JX_RolePermission" />
+        </set>
+        <property name="add_date" type="date">
+            <column name="add_date"/>
+        </property>
+                  
+	</class>
+</hibernate-mapping>

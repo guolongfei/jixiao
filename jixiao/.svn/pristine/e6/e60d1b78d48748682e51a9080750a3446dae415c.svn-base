@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="JX_Details" table="JX_DETAILS">
+		<id name="id" column="ID">
+   			<generator class="uuid.hex" />
+		</id>
+        <property name="content" type="java.lang.String">
+            <column name="CONTENT" not-null="false" length="4000"/>
+        </property>
+         <property name="departmentId" type="java.lang.String">
+            <column name="EMPLOYEE_ID" not-null="false"/>
+        </property>        
+    </class>
+</hibernate-mapping>

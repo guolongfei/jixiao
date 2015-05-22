@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="InexepensiveText" table="Inexepensive_Text">
+		<comment></comment>
+		<id name="text_id" column="text_id">
+			<generator class="uuid.hex" />
+		</id>
+		<many-to-one name="u" class="JX_User" fetch="select" lazy="false">
+            <column name="TEXT_USERID" not-null="false" />
+        </many-to-one>
+		<property name="text_grade" type="string">
+			<column name="text_grade" not-null="false" />
+		</property>
+		<property name="text_time" type="java.util.Date">
+			<column name="text_time"  not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

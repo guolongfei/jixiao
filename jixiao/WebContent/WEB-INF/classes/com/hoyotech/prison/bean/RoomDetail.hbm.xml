@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="RoomDetail" table="ROOM_DETAIL">
+		<comment></comment>
+		<id name="room_detail_id" column="room_detail_id">
+			<generator class="uuid.hex" />
+		</id>
+		<property name="room_id" type="string">
+			<column name="room_id" not-null="false" />
+		</property>
+		<property name="room_server_id" type="string">
+			<column name="room_server_id"  not-null="false"></column>
+		</property>
+		<property name="room_name" type="string">
+			<column name="room_name"  not-null="false"></column>
+		</property>
+		<property name="member_id" type="string">
+			<column name="member_id"  not-null="false"></column>
+		</property>
+		<property name="member_name" type="string">
+			<column name="member_name"  not-null="false"></column>
+		</property>
+		<property name="member_department" type="string">
+			<column name="member_department"  not-null="false"></column>
+		</property>
+		<property name="member_level" type="string">
+			<column name="member_level"  not-null="false"></column>
+		</property>
+		<property name="room_join_date" type="java.util.Date">
+			<column name="room_join_date"  not-null="false"></column>
+		</property>
+	</class>
+</hibernate-mapping>

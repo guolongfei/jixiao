@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="IdentityAddress" table="identity_address">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+         <property name="number" type="string">
+            <column name="&quot;NUMBER&quot;" >
+            </column>
+        </property>
+        <property name="address" type="string">
+            <column name="address">
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

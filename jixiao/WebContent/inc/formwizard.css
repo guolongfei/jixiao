@@ -1,0 +1,132 @@
+fieldset.sectionwrap{ /*fieldset that wraps around each form "page" */
+	border-width:0;
+	padding:5px;
+	width: 100%;
+}
+
+legend{ /*title shown at top of each form page */
+	font:bold 16px Arial;
+}
+
+div.stepsguide{ /*div that contains all the "steps" text located at top of form */ 
+	overflow:hidden;
+	margin-bottom:15px;
+	float:left;
+	display: inline;
+	float: left;
+	height: 100%;
+	width: 260px;
+}
+
+#feedbackform{
+    height:100%;
+}
+
+.stepname{
+    word-spacing: 5em;
+    height:50%;
+    text-align:left;
+    padding-left: 15px;
+    font-size: 18px;
+}
+div.stepsguide .step{ /*div that wraps around each "steps" text */
+    width:260px; /*width of each "steps" text*/
+    font: bold 24px Arial;
+    height: 70px;
+    border-bottom: 1px solid #D4D4D4;
+    color: #5C5C5C;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+div.stepsguide .disabledstep{ /*div that wraps around each "steps" text */
+   	color:#C4C4C4;
+    background:#ffffff;
+    cursor: default;
+}
+div.stepsguide div.active{
+    color: #ffffff;
+    background: #41637C;
+    cursor: default;
+}
+
+div.stepsguide .step .smalltext{ /*small footer text inside "steps" text */
+	font-size: 12px;
+	font-weight: normal;
+	padding-left:45px;
+	padding-right:20px;
+	color: #C4C4C4;
+}
+
+.smalltext-active{
+	color: #FFFFFF;
+}
+
+.formpaginate{ /* CSS for pagination DIV container */
+	overflow:hidden;
+	font-weight:bold;
+	text-align:center;
+	margin-top:1em;
+	display: inline-block;
+	margin-left:50px;
+	float: right;
+}
+
+.formpaginate .prev,.formpaginate .next{ /*CSS for "prev" and "next" SPAN elements within paginate container */
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	padding:2px 5px;
+	background:#41637C;
+	color:white;
+	cursor:hand;
+	cursor:pointer;
+}
+h2 {
+    float: left;
+    height: 36px;
+    line-height: 36px;
+}
+.customer-type{
+    margin-top:12px;
+}
+.wizard-cancel{
+	float: right;
+}
+
+.wizard-error{
+	color: #41637B;
+    font-family: 黑体;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 50px;
+    padding: 0 10px;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+.wizard-notic{
+	line-height: 40px;
+	padding: 0 10px;
+	font-size: 13px;
+    color: #C4C4C4;
+}
+.wizard-btn{
+	display: inline;
+	margin: 0 10px;
+	padding: 3px 8px;
+	vertical-align: middle;
+}
+.wizard-exit{
+	float: right;
+	margin: 5px 10px;
+}
+.fram-right{
+	width: 1000px;
+	height: 100%;
+    float: left;
+    margin-left: 30px;
+    min-height: 1px;
+}
+#iframes{
+	width: 100%;
+	height: 100%;
+}

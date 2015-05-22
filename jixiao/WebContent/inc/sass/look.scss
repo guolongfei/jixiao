@@ -1,0 +1,124 @@
+@import "compass";
+@import "compass/reset";
+
+.big_box{
+	width:70%;
+	margin:0 auto;
+	margin-top:80px;
+}
+.look_box{
+	
+	//max-height:550px;
+	overflow:auto;
+}
+.top_tit{
+	color:#f2f2f2; 
+	background:none;
+	font-size:18px;
+	font-family:微软雅黑;
+}
+.right_box{
+	background:#E7EDF3;
+	padding:7px;
+	ul{
+		list-style:none;
+		margin:0px;
+		padding:0px;
+		li{
+			@include border-radius(6px);
+			width:77%;
+			float:left;
+			margin:0 0 7px 0;
+			font-size:17px;
+			font-family:微软雅黑;
+			padding:10px 0 10px 38px;
+			cursor:pointer;
+			color:#346E40;
+			background:url("../css/img/11.png")  no-repeat 10px 10px;
+			&:hover{
+				background:url("../css/img/12.png")  no-repeat 10px 10px;
+				background-color:#346E40;
+				color:#f2f2f2;
+			}
+		}
+		.active{
+			background:url("../css/img/12.png")  no-repeat 10px 10px;
+			background-color:#346E40;
+			color:#f2f2f2;
+		}
+	}
+}
+.left_box{
+	border-right:1px solid #A3ACB6;
+	.borderB{
+		//border-bottom:1px solid #777;
+	}
+	.bg1{
+		background: rgb(131,178,222); /* Old browsers */
+		background: -moz-linear-gradient(top, rgba(131,178,222,1) 0%, rgba(98,143,186,1) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(131,178,222,1)), color-stop(100%,rgba(98,143,186,1))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(131,178,222,1) 0%,rgba(98,143,186,1) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(131,178,222,1) 0%,rgba(98,143,186,1) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(131,178,222,1) 0%,rgba(98,143,186,1) 100%); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(131,178,222,1) 0%,rgba(98,143,186,1) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83b2de', endColorstr='#628fba',GradientType=0 ); /* IE6-9 */
+	}
+	.bg2{
+		background:#cbcbcb;
+	}
+	.span1{
+		padding:11px 8px 9px 8px;
+		color:#EAF4FF;
+		text-align:center;
+		font-weight: bold;
+		font-family:微软雅黑;
+		margin:0 0 0 0;
+		line-height:28px;
+		//border-bottom:1px solid #777;
+	}
+	.span11{
+		//padding-bottom:8px;
+		background:url("../css/img/bg11.png") repeat;
+		min-height: 50px;
+		border-bottom:1px solid #A3ACB6;
+	}
+	ul{
+		list-style:none;
+		margin:9px 0 0 0;
+		padding:0px;
+		li{
+			@include border-radius(6px);
+			width:7.9%;
+			float:left;
+			margin:0 0 8px 8px;
+			text-align:center;
+			font-size:16px;
+			font-family:微软雅黑;
+			padding:8px 0;
+			cursor:pointer;
+			color:#656667;
+			&:hover{
+				background:#346E40;
+				color:#f2f2f2;
+			}
+		}
+		.fRight{
+			float:right;
+		}
+		.active{
+			background:#346E40;
+			color:#f2f2f2;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

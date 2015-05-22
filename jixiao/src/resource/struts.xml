@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<!-- 指定Web应用的默认编码集,相当于调用HttpServletRequest的setCharacterEncoding方法 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 设置浏览器是否缓存静态内容,默认值为true(生产环境下使用),开发阶段最好关闭 -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<!-- 当struts的配置文件修改后,系统是否自动重新加载该文件,默认值为false(生产环境下使用),开发阶段最好打开 -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<!-- 开发模式下使用,这样可以打印出更详细的错误信息 -->
+	<constant name="struts.devMode" value="false" />
+	<!-- 默认的视图主题 -->
+	<constant name="struts.ui.theme" value="simple" />
+	<include file="struts_hzb.xml"></include>
+	<include file="struts_cw.xml"></include>
+	<package name="default" extends="struts-default">
+		<action name="main_*" class="mainAction" method="{1}">
+			<result name="surveil">/WEB-INF/content/surveil.jsp</result>
+			<result name="st">/WEB-INF/content/monitoring_platform/index.jsp
+			</result>
+			<result name="st2">/WEB-INF/content/no_examine.jsp</result>
+		</action>
+		<action name="province_*" class="provinceAction" method="{1}">
+			<result name="success">/WEB-INF/content/monitoring_platform/province_news.jsp
+			</result>
+			<result name="integratedQuery">/WEB-INF/content/monitoring_platform/province_integratedQuery.jsp
+			</result>
+			<result name="List">/WEB-INF/content/monitoring_platform/prisonerList.jsp
+			</result>
+			<result name="selectall">/WEB-INF/content/monitoring_platform/province_selectAll.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/monitoring_platform/prisonerDetail.jsp
+			</result>
+			<result name="reportForm">/WEB-INF/content/monitoring_platform/prisonerCount.jsp
+			</result>
+			<result name="timeChose">/WEB-INF/content/monitoring_platform/prisonerTimeChose.jsp
+			</result>
+		</action>
+		<action name="photoQuery_*" class="photoQueryAction" method="{1}">
+			<result name="init">/WEB-INF/content/monitoring_platform/province_photoQuery.jsp
+			</result>
+			<result name="select">/WEB-INF/content/monitoring_platform/province_photoQuery.jsp
+			</result>
+		</action>
+
+		<action name="main" class="mainAction">
+			<result name="success">/WEB-INF/content/main.jsp</result>
+		</action>
+		<action name="prisonerMain_*" class="prisonerMainAction"
+			method="{1}">
+			<result name="success">/WEB-INF/content/prisoner_main.jsp</result>
+			<result name="addUI" type="redirect">manage/prisoner_interAdd.action
+			</result>
+		</action>
+		<action name="login">
+			<result name="success">/WEB-INF/content/login.jsp</result>
+		</action>
+		<action name="look" class="nameSearchAction">
+			<result name="success">/WEB-INF/content/look.jsp</result>
+		</action>
+		<action name="map_*" class="mapAction" method="{1}">
+			<result name="success">/WEB-INF/content/map.jsp</result>
+		</action>
+		<action name="count_*" class="countAction" method="{1}">
+			<result name="success">/WEB-INF/content/dataAnalysis/count.jsp</result>
+			<result name="timeChose">/WEB-INF/content/dataAnalysis/timeChose.jsp
+			</result>
+		</action>
+		<action name="analysis_*" class="analysisAction" method="{1}">
+			<result name="success">/WEB-INF/content/dataAnalysis/dataAnalysis.jsp
+			</result>
+			<result name="list">/WEB-INF/content/dataAnalysis/prisonerList.jsp
+			</result>
+		</action>
+		<action name="proAnalysis_*" class="proAnalysisAction" method="{1}">
+
+			<result name="inanalysis">/WEB-INF/content/dataAnalysis/proAnalysis_inAnalysis.jsp
+			</result>
+			<result name="outanalysis">/WEB-INF/content/dataAnalysis/proAnalysis_outAnalysis.jsp
+			</result>
+			<result name="classifyAnalysis">/WEB-INF/content/dataAnalysis/proAnalysis_classifyAnalysis.jsp
+			</result>
+			<result name="statisticsAnalysis">/WEB-INF/content/dataAnalysis/proAnalysis_statisticsAnalysis.jsp
+			</result>
+			<result name="analysis">/WEB-INF/content/dataAnalysis/analysis.jsp
+			</result>
+			<result name="success">/WEB-INF/content/dataAnalysis/proDataAnalysis.jsp
+			</result>
+			<result name="stList">/WEB-INF/content/dataAnalysis/st_prisonerList.jsp
+			</result>
+			<result name="st_analysis_list">/WEB-INF/content/dataAnalysis/st_analysis_prisonerList.jsp
+			</result>
+		</action>
+	</package>
+
+	<!-- 绩效管理 -->
+	<package name="performance" extends="struts-default" namespace="/performance">
+		<action name="performance_*" class="PerformanceAction" method="{1}">
+			<result name="toPFEditByday">/page/jixiaoEditor/MyJixiaoEdit.jsp</result> <!-- 每日绩效编辑页面 -->
+			<result name="savePFByday">/page/jixiaoEditor/MyJixiaoEdit.jsp</result>   <!-- 每日绩效编辑保存 -->
+			<result name="performanceList">/page/jixiaoEditor/myJixiao.jsp</result>
+			<result name="myPerformance">/page/jixiaoEditor/MyJixiaoEdit.jsp</result>
+			<result name="toPFOfmonth">/page/jixiaoEditor/jixiaoOfmonth.jsp</result> <!-- 跳转到月绩效管理界面 -->
+			<result name="toPFOfseason">/page/jixiaoEditor/jixiaoOfseason.jsp</result> <!-- 跳转到季绩效管理界面 -->
+			<result name="jixiaoOfyear">/page/jixiaoEditor/jixiaoOfyear.jsp</result> <!-- 跳转到年绩效管理界面 -->
+			<result name="otherjixiao">/page/jixiaoEditor/otherjixiao.jsp</result> <!-- 跳转到该部门其他人员绩效界面 -->
+			<result name="otherjixiaoDetail">/page/jixiaoEditor/otherjixiaoDetail.jsp</result> <!-- 跳转到该部门其他人员绩效详情界面 -->
+			<result name="evaluationList">/page/jixiaoEditor/evaluationList.jsp</result> <!-- 跳转到该部门其他人员列表做季评鉴 -->
+			<result name="jixiaoOfseasonDetail">/page/jixiaoEditor/jixiaoOfseasonDetail.jsp
+			</result> <!-- 跳转到该部门其他人员季绩效详情界面 -->
+			<result name="evaluationOfseason">/page/jixiaoEditor/evaluationOfseason.jsp
+			</result><!-- 跳转到打分界面 -->
+			<result name="toPrint">/page/jixiaoEditor/jprint.jsp</result>
+			<!--
+				跳转到打印界面
+			-->
+			<result name="toPurpose">/page/jixiaoEditor/purpose.jsp</result>
+			<!--
+				跳转到工作目标界面
+			-->
+		</action>
+	</package>
+
+	<!--    卢志明2015年1月19日-->
+	<!--发布信息管理 -->
+	<package name="message" extends="struts-default" namespace="/messageManage">
+		<action name="message_*" class="MessageReleasesAction" method="{1}">
+			<result name="getMessageList">/home/jx_leftMenu.jsp</result>
+			<result name="getZhengceList">/page/zhengce/zhengceList.jsp</result>
+			<result name="zhengceDetail">/page/zhengce/zhengceDetail.jsp</result>
+			<result name="detail">/home/newsDetail.jsp</result>
+			<result name="appraise">/home/apprise_menu.jsp</result>
+			<result name="bs_messageList">/backstage/message_releasese/messageList.jsp
+			</result>
+			<result name="bs_messageAdd">/backstage/message_releasese/messageAdd.jsp
+			</result>
+			<result name="bs_messageDetail">/backstage/message_releasese/messageDetail.jsp
+			</result>
+			<result name="bs_messageEdit">/backstage/message_releasese/messageEdit.jsp
+			</result>
+			<result name="bs_messageUpdate">/backstage/message_releasese/messageUpdate.jsp
+			</result>
+			<result name="toBasicSetup">/backstage/basic_setup/basicsetup.jsp</result>
+			<result name="basicList">/backstage/basic_setup/basic_setuplist.jsp
+			</result>
+		</action>
+	</package>
+	<!-- 突出成果管理 -->
+	<package name="achieve" extends="struts-default" namespace="/achieveManage">
+		<action name="achieveManage_*" class="AchievementAction"
+			method="{1}">
+			<result name="getAchieve">/page/achievement/achievement.jsp</result>
+		</action>
+	</package>
+	<!-- 考学考廉管理 -->
+	<package name="kao" extends="struts-default" namespace="/TextManage">
+		<action name="TextManage_*" class="InexepensiveTextAction"
+			method="{1}">
+			<result name="myText">/page/inexepensiveText/inexepensiveText.jsp
+			</result>
+			<result name="myLearning">/page/inexepensiveText/learningText.jsp</result>
+		</action>
+	</package>
+	<!--专办评分-->
+	<package name="zhuanban" extends="struts-default" namespace="/SpecialScore">
+		<action name="SpecialScore_*" class="SpecialScoreAction"
+			method="{1}">
+			<result name="addScore">/page/specialscore/addscore.jsp</result>
+			<result name="show">/page/specialscore/showscore.jsp</result>
+		</action>
+	</package>
+
+	<!--卢志明2015年4月8日  房间管理-->
+	<package name="room" extends="struts-default" namespace="/roomManager">
+		<action name="roomManager_*" class="RoomManagerAction" method="{1}">
+			<result name="roomList">/page/room/roomlist.jsp</result>
+			<result name="addMem">/page/room/addmember.jsp</result>
+			<result name="addRoom">/page/room/addroom.jsp</result>
+			<result name="update">/page/room/updateroom.jsp</result>
+		</action>
+	</package>
+	<!-- 闵高2015年1月19日 -->
+	<!-- 首页信息模块显示 -->
+	<package name="homePage" extends="struts-default" namespace="/messageManage">
+		<action name="homePage_*" class="HomePageAction" method="{1}">
+			<result name="messageList">/home/homepage.jsp</result>
+			<result name="performance">/page/manageHome/main.jsp</result>
+			<result name="loginOut">/home/login.jsp</result>
+			<result name="updatePsd">/page/manageHome/changepsd.jsp</result>
+			<result name="frowdPsd">/page/manageHome/changepsd.jsp</result>
+			<result name="loginIn">/home/login.jsp</result>
+		</action>
+		<action name="online_*" class="com.hoyotech.prison.action.OnLine_Test"
+			method="{1}">
+			<result name="number">/page/manageHome/online.jsp</result>
+		</action>
+		<action name="employee_*" class="com.hoyotech.prison.action.EmployeeAction"
+			method="{1}">
+			<result name="addRule">/page/employee/addrule.jsp</result>
+			<result name="showList">/page/employee/details.jsp</result>
+		</action>
+	</package>
+	<package name="quarter" extends="struts-default" namespace="/quarterManage">
+		<action name="quarter_*" class="QuarterAction" method="{1}">
+			<result name="quarterList">/backstage/quarter/timeset.jsp</result>
+			<result name="queryTime">/backstage/quarter/updateTime.jsp</result>
+		</action>
+	</package>
+
+	<!--	刘泉2015.01.25-->
+	<!--部门管理-->
+	<package name="jx_department" extends="struts-default"
+		namespace="/jx_department">
+		<action name="jx_department_*" class="JX_DepartmentAction"
+			method="{1}">
+			<result name="gotoAddDepartment">/page/department/departmentAdd.jsp</result>
+			<result name="gotoDepartmentList">/page/department/departmentList.jsp</result>
+			<result name="gotoDepartmentDetail">/page/department/departmentDetail.jsp</result>
+			<result name="AddSuccess">/page/department/departmentList.jsp</result>
+			<!--
+				<result
+				name="UpdateSuccess">/page/department/departmentList.jsp</result>
+			-->
+			<!--
+				<result
+				name="DeleteSuccess">/page/department/departmentList.jsp</result>
+			-->
+		</action>
+	</package>
+	<!--	用户管理-->
+	<package name="jx_user" extends="struts-default" namespace="/jx_user">
+		<action name="jx_user_*" class="JX_UserAction" method="{1}">
+			<result name="gotoAddUser">/page/user/userAdd.jsp</result>
+			<result name="AddSuccess">/page/user/userDetail.jsp</result>
+			<result name="gotoUserList">/page/user/userList.jsp</result>
+			<result name="gotoUserDetail">/page/user/userDetail.jsp</result>
+			<result name="gotoUserEdit">/page/user/userEdit.jsp</result>
+			<result name="UpdateSuccess">/page/user/userDetail.jsp</result>
+			<result name="gotoUserRole">/page/user/userRole.jsp</result>
+			<result name="editUserRoleAces">/page/user/userRole.jsp</result>
+			<result name="DeleteSuccess">/page/user/userList.jsp</result>
+		</action>
+	</package>
+	<!--	角色管理-->
+	<package name="jx_role" extends="struts-default" namespace="/jx_role">
+		<action name="jx_role_*" class="JX_RoleAction" method="{1}">
+			<result name="gotoAddRole">/page/role/roleAdd.jsp</result>
+			<result name="editPermission">/page/role/rolePer.jsp</result>
+			<result name="editPerAces">/page/role/roleList.jsp</result>
+			<result name="gotoRoleList">/page/role/roleList.jsp</result>
+			<result name="AddSuccess">/page/role/roleList.jsp</result>
+			<!--			<result name="DeleteSuccess">/page/role/roleList.jsp</result>-->
+		</action>
+	</package>
+
+
+
+
+	<!-- 王辉 2015-4-9 用于移动端的接口等 -->
+	<package name="mobile" extends="struts-default" namespace="/mobile">
+		<action name="mobile_*" class="MobileAction" method="{1}">
+			<result name=""></result>
+		</action>
+	</package>
+	<package name="mobileroom" extends="struts-default" namespace="/mobileRoom">
+		<action name="mobile_*" class="MobileRoomManageAction" method="{1}">
+			<result name=""></result>
+		</action>
+	</package>
+
+
+
+
+
+	<!-- 拘留所信息管理 -->
+	<package name="no-default" extends="struts-default" namespace="/prisonManage">
+		<action name="prison_*" class="prisonAction" method="{1}">
+			<result name="infoList">/WEB-INF/content/prisonInfo/prisonInfoList.jsp
+			</result>
+			<result name="stinfoList">/WEB-INF/content/st_prisonInfo/prisonInfoList.jsp
+			</result>
+			<result name="infoEdit">/WEB-INF/content/prisonInfo/prisonInfoEdit.jsp
+			</result>
+			<result name="infoAdd">/WEB-INF/content/prisonInfo/prisonInfoAdd.jsp
+			</result>
+			<result name="infoDetail">/WEB-INF/content/prisonInfo/prisonInfoDetail.jsp
+			</result>
+			<result name="stinfoDetail">/WEB-INF/content/st_prisonInfo/prisonInfoDetail.jsp
+			</result>
+			<result name="detail" type="redirect">prison_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">prison_select.action</result>
+		</action>
+	</package>
+	<!-- 装备管理 -->
+	<package name="equip" extends="struts-default" namespace="/equipment">
+		<action name="equip_*" class="equipAction" method="{1}">
+			<result name="List">/WEB-INF/content/equip/equipList.jsp</result>
+			<result name="Edit">/WEB-INF/content/equip/equipEdit.jsp</result>
+			<result name="Add">/WEB-INF/content/equip/equipAdd.jsp</result>
+			<result name="Detail">/WEB-INF/content/equip/equipDetail.jsp</result>
+			<result name="detail" type="redirect">equip_detailEquip.action?id=${id}
+			</result>
+			<result name="select" type="redirect">equip_select.action</result>
+		</action>
+	</package>
+	<!-- 车辆管理 -->
+	<package name="car" extends="struts-default" namespace="/carManage">
+		<action name="car_*" class="carAction" method="{1}">
+			<result name="List">/WEB-INF/content/car/carList.jsp</result>
+			<result name="Edit">/WEB-INF/content/car/carEdit.jsp</result>
+			<result name="Add">/WEB-INF/content/car/carAdd.jsp</result>
+			<result name="Detail">/WEB-INF/content/car/carDetail.jsp</result>
+			<result name="detail" type="redirect">car_detailCar.action?id=${id}
+			</result>
+			<result name="select" type="redirect">car_select.action</result>
+		</action>
+	</package>
+	<!-- 医务人员管理 -->
+	<package name="medical" extends="struts-default" namespace="/medicManage">
+		<action name="medical_*" class="medicalAction" method="{1}">
+			<result name="List">/WEB-INF/content/medical/medicalList.jsp</result>
+			<result name="Edit">/WEB-INF/content/medical/medicalEdit.jsp</result>
+			<result name="Add">/WEB-INF/content/medical/medicalAdd.jsp</result>
+			<result name="Detail">/WEB-INF/content/medical/medicalDetail.jsp
+			</result>
+			<result name="detail" type="redirect">medical_detailMedical.action?id=${id}
+			</result>
+			<result name="select" type="redirect">medical_select.action</result>
+		</action>
+	</package>
+	<!-- 文职人员管理 -->
+	<package name="civilian" extends="struts-default" namespace="/civiManage">
+		<action name="civilian_*" class="civilianAction" method="{1}">
+			<result name="List">/WEB-INF/content/civilian/civilianList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/civilian/civilianEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/civilian/civilianAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/civilian/civilianDetail.jsp
+			</result>
+			<result name="detail" type="redirect">civilian_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">civilian_select.action</result>
+		</action>
+	</package>
+	<!-- 工勤人员管理 -->
+	<package name="logistic" extends="struts-default" namespace="/logiManage">
+		<action name="logistic_*" class="logisticAction" method="{1}">
+			<result name="List">/WEB-INF/content/logistic/logisticList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/logistic/logisticEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/logistic/logisticAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/logistic/logisticDetail.jsp
+			</result>
+			<result name="detail" type="redirect">logistic_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">logistic_select.action</result>
+		</action>
+	</package>
+	<!-- 用户管理 -->
+	<package name="user" extends="struts-default" namespace="/userManage">
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="List">/WEB-INF/content/user/userList.jsp</result>
+			<result name="stList">/WEB-INF/content/st_user/userList.jsp</result>
+			<result name="Edit">/WEB-INF/content/user/userEdit.jsp</result>
+			<result name="stEdit">/WEB-INF/content/st_user/userEdit.jsp</result>
+			<result name="Add">/WEB-INF/content/user/userAdd.jsp</result>
+			<result name="stAdd">/WEB-INF/content/st_user/userAdd.jsp</result>
+			<result name="Detail">/WEB-INF/content/user/userDetail.jsp</result>
+			<result name="stDetail">/WEB-INF/content/st_user/userDetail.jsp</result>
+			<result name="detail" type="redirect">user_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">user_select.action</result>
+			<result name="roleedit">/WEB-INF/content/user/roleEdit.jsp</result>
+			<result name="stroleedit">/WEB-INF/content/st_user/roleEdit.jsp</result>
+			<result name="PWD_Edit">/WEB-INF/content/PWD_Edit.jsp</result>
+			<result name="listZD">/WEB-INF/content/st_userZD/userListZD.jsp
+			</result>
+			<result name="detailZD">/WEB-INF/content/st_userZD/userDetailZD.jsp
+			</result>
+			<result name="editZD">/WEB-INF/content/st_userZD/userEditZD.jsp
+			</result>
+			<result name="AddZD">/WEB-INF/content/st_userZD/userAddZD.jsp</result>
+			<result name="intouserPowerEdit">/WEB-INF/content/st_userZD/userPowerEdit.jsp
+			</result>
+		</action>
+		<action name="userDetention_*" class="userDetentionAction"
+			method="{1}">
+			<result name="edit">/WEB-INF/content/userDetention/userDetention.jsp
+			</result>
+			<result name="Edit" type="redirect">userDetention_editUI.action?id=${id}
+			</result>
+		</action>
+		<action name="userDuty_*" class="userDutyAction" method="{1}">
+			<result name="list">/WEB-INF/content/userDuty/userDutyList.jsp
+			</result>
+			<result name="addUI">/WEB-INF/content/userDuty/userDutyAdd.jsp
+			</result>
+			<result name="edit">/WEB-INF/content/userDuty/userDutyEdit.jsp
+			</result>
+			<result name="detail">/WEB-INF/content/userDuty/userDutyDetail.jsp
+			</result>
+			<result name="Detail" type="redirect">userDuty_detail.action?id=${id}
+			</result>
+		</action>
+	</package>
+	<!-- 角色管理 -->
+	<package name="role" extends="struts-default" namespace="/roleManage">
+		<action name="role_*" class="roleAction" method="{1}">
+			<result name="List">/WEB-INF/content/role/roleList.jsp</result>
+			<result name="stList">/WEB-INF/content/st_role/roleList.jsp</result>
+			<result name="Edit">/WEB-INF/content/role/roleEdit.jsp</result>
+			<result name="Add">/WEB-INF/content/role/roleAdd.jsp</result>
+			<result name="Detail">/WEB-INF/content/role/roleDetail.jsp</result>
+			<result name="stDetail">/WEB-INF/content/st_role/roleDetail.jsp</result>
+			<result name="detail" type="redirect">role_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">role_select.action</result>
+			<result name="permission">/WEB-INF/content/role/rolePer.jsp</result>
+			<result name="stpermission">/WEB-INF/content/st_role/rolePer.jsp</result>
+		</action>
+	</package>
+	<!-- 登录管理 -->
+	<package name="login" extends="struts-default">
+		<action name="login_*" class="loginAction" method="{1}">
+		</action>
+		<action name="failureAlarm_*" class="alarmAction" method="{1}">
+			<result name="List">/WEB-INF/content/failureAlarm/failureAlarmList.jsp
+			</result>
+		</action>
+	</package>
+	<!-- 报警故障信息 -->
+	<package name="failureAlarm" extends="struts-default">
+		<action name="failureAlarm_*" class="alarmAction" method="{1}">
+			<result name="List">/WEB-INF/content/failureAlarm/failureAlarmList.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/failureAlarm/failureAlarmDetail.jsp
+			</result>
+			<result name="detail" type="redirect">failureAlarm_detail.action?id=${id}
+			</result>
+		</action>
+		<action name="workUnit_*" class="workUnitAction" method="{1}">
+			<result name="List">/WEB-INF/content/workUnit/workUnitList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/workUnit/workUnitEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/workUnit/workUnitAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/workUnit/workUnitDetail.jsp
+			</result>
+			<result name="detail" type="redirect">workUnit_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">workUnit_select.action</result>
+		</action>
+		<action name="log_*" class="logAction" method="{1}">
+			<result name="List">/WEB-INF/content/log/logList.jsp</result>
+		</action>
+	</package>
+	<!-- 以下是台账的 -->
+	<!-- 出所登记信息（台账） -->
+	<package name="outRegister" extends="struts-default">
+		<action name="outRegister_*" class="outRegiAction" method="{1}">
+			<result name="List">/WEB-INF/content/sb_outPrison/outPrisonList.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/sb_outPrison/outPrisonDetail.jsp
+			</result>
+			<result name="detail" type="redirect">outRegister_detail.action?id=${id}
+			</result>
+			<result name="ListPrint">/WEB-INF/content/sb_outPrison/outPrisonListPrint.jsp
+			</result>
+		</action>
+	</package>
+	<package name="interview" extends="struts-default">
+		<!-- 会见登记（台账） -->
+		<action name="interview_*" class="interviewAction" method="{1}">
+			<result name="List">/WEB-INF/content/sb_interview/interviewList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/sb_interview/interviewEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/sb_interview/interviewAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/sb_interview/interviewDetail.jsp
+			</result>
+			<result name="detail" type="redirect">interview_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">interview_select.action</result>
+			<result name="ListPrint">/WEB-INF/content/sb_interview/interviewPrint.jsp
+			</result>
+		</action>
+		<!-- 深挖犯罪线索（台账） -->
+		<action name="deepCrime_*" class="deepCrimeAction" method="{1}">
+			<result name="List">/WEB-INF/content/sb_deepCrime/deepCrimeList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/sb_deepCrime/deepCrimeEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/sb_deepCrime/deepCrimeAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/sb_deepCrime/deepCrimeDetail.jsp
+			</result>
+			<result name="detail" type="redirect">deepCrime_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">deepCrime_select.action</result>
+			<result name="ListPrint">/WEB-INF/content/sb_deepCrime/deepCrimePrint.jsp
+			</result>
+		</action>
+		<!-- 所内就医登记（台账） -->
+		<action name="doctor_*" class="doctorAction" method="{1}">
+			<result name="List">/WEB-INF/content/sb_doctor/doctorList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/sb_doctor/doctorEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/sb_doctor/doctorAdd.jsp</result>
+			<result name="Detail">/WEB-INF/content/sb_doctor/doctorDetail.jsp
+			</result>
+			<result name="detail" type="redirect">doctor_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">doctor_select.action</result>
+			<result name="ListPrint">/WEB-INF/content/sb_doctor/doctorPrint.jsp
+			</result>
+		</action>
+		<!-- 出所就医登记（台账） -->
+		<action name="outDoctor_*" class="outDoctorAction" method="{1}">
+			<result name="List">/WEB-INF/content/sb_outDoctor/outDoctorList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/sb_outDoctor/outDoctorEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/sb_outDoctor/outDoctorAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/sb_outDoctor/outDoctorDetail.jsp
+			</result>
+			<result name="detail" type="redirect">outDoctor_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">outDoctor_select.action</result>
+			<result name="ListPrint">/WEB-INF/content/sb_outDoctor/outDoctorPrint.jsp
+			</result>
+		</action>
+		<!-- 严管登记（台账） -->
+		<action name="strictManage_*" class="strictManageAction"
+			method="{1}">
+			<result name="List">/WEB-INF/content/sb_strictManage/strictManageList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/sb_strictManage/strictManageEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/sb_strictManage/strictManageAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/sb_strictManage/strictManageDetail.jsp
+			</result>
+			<result name="detail" type="redirect">strictManage_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">strictManage_select.action</result>
+			<result name="ListPrint">/WEB-INF/content/sb_strictManage/strictManagePrint.jsp
+			</result>
+		</action>
+		<!-- 代收财务登记（台账） -->
+		<action name="daiShou_*" class="daiShouAction" method="{1}">
+			<result name="List">/WEB-INF/content/sb_daiShou/daiShouList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/sb_daiShou/daiShouEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/sb_daiShou/daiShouAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/sb_daiShou/daiShouDetail.jsp
+			</result>
+			<result name="detail" type="redirect">daiShou_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">daiShou_select.action</result>
+			<result name="ListPrint">/WEB-INF/content/sb_daiShou/daiShouPrint.jsp
+			</result>
+		</action>
+		<!-- 应急预案演练记录（台账） -->
+		<action name="emergency_*" class="emergencyAction" method="{1}">
+			<result name="List">/WEB-INF/content/sb_emergency/emergencyList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/sb_emergency/emergencyEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/sb_emergency/emergencyAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/sb_emergency/emergencyDetail.jsp
+			</result>
+			<result name="detail" type="redirect">emergency_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">emergency_select.action</result>
+			<result name="ListPrint">/WEB-INF/content/sb_emergency/emergencyPrint.jsp
+			</result>
+		</action>
+		<!-- 安全检查记录（台账） -->
+		<action name="safeCheck_*" class="safeCheckAction" method="{1}">
+			<result name="List">/WEB-INF/content/sb_safeCheck/safeCheckList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/sb_safeCheck/safeCheckEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/sb_safeCheck/safeCheckAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/sb_safeCheck/safeCheckDetail.jsp
+			</result>
+			<result name="detail" type="redirect">safeCheck_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">safeCheck_select.action</result>
+			<result name="ListPrint">/WEB-INF/content/sb_safeCheck/safeCheckPrint.jsp
+			</result>
+		</action>
+		<!-- 视察检查记录（台账） -->
+		<action name="inspect_*" class="inspectAction" method="{1}">
+			<result name="List">/WEB-INF/content/sb_inspect/inspectList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/sb_inspect/inspectEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/sb_inspect/inspectAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/sb_inspect/inspectDetail.jsp
+			</result>
+			<result name="detail" type="redirect">inspect_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">inspect_select.action</result>
+			<result name="ListPrint">/WEB-INF/content/sb_inspect/inspectPrint.jsp
+			</result>
+		</action>
+		<!-- 集体教育记录（台账） -->
+		<action name="education_*" class="educationAction" method="{1}">
+			<result name="List">/WEB-INF/content/sb_education/educationList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/sb_education/educationEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/sb_education/educationAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/sb_education/educationDetail.jsp
+			</result>
+			<result name="detail" type="redirect">education_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">education_select.action</result>
+			<result name="ListPrint">/WEB-INF/content/sb_education/educationPrint.jsp
+			</result>
+			<result name="init">/WEB-INF/content/monitoring_platform/education_init.jsp
+			</result>
+			<result name="init1">/WEB-INF/content/monitoring_platform/safety_supervise.jsp
+			</result>
+			<result name="init2">/WEB-INF/content/monitoring_platform/census_register.jsp
+			</result>
+			<result name="init3">/WEB-INF/content/monitoring_platform/2.19.jsp
+			</result>
+			<result name="init4">/WEB-INF/content/monitoring_platform/2.20.jsp
+			</result>
+			<result name="init5">/WEB-INF/content/monitoring_platform/2.21.jsp
+			</result>
+		</action>
+		<!-- 所长接待记录（台账） -->
+		<action name="reception_*" class="receptionAction" method="{1}">
+			<result name="List">/WEB-INF/content/sb_reception/receptionList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/sb_reception/receptionEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/sb_reception/receptionAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/sb_reception/receptionDetail.jsp
+			</result>
+			<result name="detail" type="redirect">reception_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">reception_select.action</result>
+			<result name="ListPrint">/WEB-INF/content/sb_reception/receptionPrint.jsp
+			</result>
+		</action>
+		<!-- 值班记录（台账） -->
+		<action name="handOver_*" class="handOverAction" method="{1}">
+			<result name="List">/WEB-INF/content/sb_handOver/handOverList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/sb_handOver/handOverEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/sb_handOver/handOverAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/sb_handOver/handOverDetail.jsp
+			</result>
+			<result name="detail" type="redirect">handOver_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">handOver_select.action</result>
+			<result name="ListPrint">/WEB-INF/content/sb_handOver/handOverPrint.jsp
+			</result>
+		</action>
+		<!-- 所务会议记录（台账） -->
+		<action name="meetingRecord_*" class="meetingRecordAction"
+			method="{1}">
+			<result name="List">/WEB-INF/content/sb_meetingRecord/meetingRecordList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/sb_meetingRecord/meetingRecordEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/sb_meetingRecord/meetingRecordAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/sb_meetingRecord/meetingRecordDetail.jsp
+			</result>
+			<result name="detail" type="redirect">meetingRecord_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">meetingRecord_select.action
+			</result>
+			<result name="ListPrint">/WEB-INF/content/sb_meetingRecord/meetingRecordPrint.jsp
+			</result>
+		</action>
+		<!-- 动态分析会议记录（台账） -->
+		<action name="analysisMeeting_*" class="analysisMeetingAction"
+			method="{1}">
+			<result name="List">/WEB-INF/content/sb_analysisMeeting/analysisMeetingList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/sb_analysisMeeting/analysisMeetingEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/sb_analysisMeeting/analysisMeetingAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/sb_analysisMeeting/analysisMeetingDetail.jsp
+			</result>
+			<result name="detail" type="redirect">analysisMeeting_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">analysisMeeting_select.action
+			</result>
+			<result name="ListPrint">/WEB-INF/content/sb_analysisMeeting/analysisMeetingPrint.jsp
+			</result>
+		</action>
+		<!-- 对社会开放记录（台账） -->
+		<action name="societyOpen_*" class="societyOpenAction" method="{1}">
+			<result name="List">/WEB-INF/content/sb_societyOpen/societyOpenList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/sb_societyOpen/societyOpenEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/sb_societyOpen/societyOpenAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/sb_societyOpen/societyOpenDetail.jsp
+			</result>
+			<result name="detail" type="redirect">societyOpen_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">societyOpen_select.action</result>
+			<result name="ListPrint">/WEB-INF/content/sb_societyOpen/societyOpenPrint.jsp
+			</result>
+		</action>
+		<!-- 社会矛盾化解工作记录（台账） -->
+		<action name="handleConflict_*" class="handleConflictAction"
+			method="{1}">
+			<result name="List">/WEB-INF/content/sb_handleConflict/handleConflictList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/sb_handleConflict/handleConflictEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/sb_handleConflict/handleConflictAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/sb_handleConflict/handleConflictDetail.jsp
+			</result>
+			<result name="detail" type="redirect">handleConflict_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">handleConflict_select.action
+			</result>
+			<result name="ListPrint">/WEB-INF/content/sb_handleConflict/handleConflictPrint.jsp
+			</result>
+		</action>
+		<!-- 谈话教育记录（台账） -->
+		<action name="talkEducation_*" class="talkEducationAction"
+			method="{1}">
+			<result name="List">/WEB-INF/content/sb_talkEducation/talkEducationList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/sb_talkEducation/talkEducationEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/sb_talkEducation/talkEducationAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/sb_talkEducation/talkEducationDetail.jsp
+			</result>
+			<result name="detail" type="redirect">talkEducation_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">talkEducation_select.action
+			</result>
+			<result name="ListPrint">/WEB-INF/content/sb_talkEducation/talkEducationPrint.jsp
+			</result>
+		</action>
+		<!-- 巡视监控记录（台账） -->
+		<action name="patrolRecord_*" class="patrolRecordAction"
+			method="{1}">
+			<result name="List">/WEB-INF/content/sb_patrolRecord/patrolRecordList.jsp
+			</result>
+			<result name="Edit">/WEB-INF/content/sb_patrolRecord/patrolRecordEdit.jsp
+			</result>
+			<result name="Add">/WEB-INF/content/sb_patrolRecord/patrolRecordAdd.jsp
+			</result>
+			<result name="Detail">/WEB-INF/content/sb_patrolRecord/patrolRecordDetail.jsp
+			</result>
+			<result name="detail" type="redirect">patrolRecord_detail.action?id=${id}
+			</result>
+			<result name="select" type="redirect">patrolRecord_select.action</result>
+			<result name="ListPrint">/WEB-INF/content/sb_patrolRecord/patrolRecordPrint.jsp
+			</result>
+		</action>
+		<!-- 入出所登记 （打印） -->
+	</package>
+
+
+	<!-- 考勤统计 -->
+	<package name="record" extends="struts-default" namespace="/messageManage">
+		<action name="record_*" class="RecordAction" method="{1}">
+			<result name="recordList">/page/jsp/record.jsp</result>
+			<result name="recordList2">/page/jsp/record.jsp</result>
+			<result name="gradeList">/page/jsp/score.jsp</result>
+			<result name="queryDep">/page/jsp/internalEvaluation.jsp</result>
+			<result name="InternalVote">/page/jsp/voteList.jsp</result>
+			<result name="queryDep2">/page/jsp/outernalEvaluation.jsp</result>
+			<result name="OuternalVote">/page/jsp/voteList2.jsp</result>
+			<result name="voteGather">/page/jsp/voteGather.jsp</result>
+		</action>
+	</package>
+</struts>

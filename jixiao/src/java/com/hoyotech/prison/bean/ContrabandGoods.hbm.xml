@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="ContrabandGoods" table="contraband_goods">
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+        <many-to-one name="prisoner" class="Prisoner" fetch="select" lazy="false">
+            <column name="prisoner_id" />
+        </many-to-one>
+        <property name="contrabandGoodsNumber" type="string">
+            <column name="contraband_goods_number" length="50" />
+        </property>
+        <property name="contrabandGoodsName" type="string">
+            <column name="contraband_goods_name" length="50" />
+        </property>
+        <property name="contrabandGoodsNorms" type="string">
+            <column name="contraband_goods_norms" length="50" />
+        </property>
+        <property name="contrabandGoodsQuantity" type="string">
+            <column name="contraband_goods_quantity" length="50" />
+        </property>
+        <property name="contrabandGoodsFeature" type="string">
+            <column name="contraband_goods_feature" />
+        </property>
+        <property name="contrabandGoodsRemark" type="string">
+            <column name="contraband_goods_remark" />
+        </property>
+        <property name="state" type="int">
+            <column name="state" not-null="true" />
+        </property>
+        <property name="addTime" type="date">
+            <column name="add_time" not-null="true" />
+        </property>
+        <property name="updateTime" type="date">
+            <column name="update_time" />
+        </property>
+        <property name="prisonCode" type="string">
+            <column name="prison_code" />
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

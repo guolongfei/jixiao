@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="PatrolRecord" table="patrolRecord">
+		<comment></comment>
+		<id name="id" column="id">
+			<generator class="uuid.hex" />
+		</id>
+		<property name="time" type="java.util.Date">
+			<column name="time" not-null="false" />
+		</property>
+		<many-to-one name="watch" class="Police" fetch="select" lazy="false">
+            <column name="watch" not-null="false" />
+        </many-to-one>
+        <many-to-one name="leader" class="Police" fetch="select" lazy="false">
+            <column name="leader" not-null="false" />
+        </many-to-one>
+		<property name="startTime" type="java.util.Date">
+			<column name="start_time" not-null="false" />
+		</property>
+		<property name="startNum" type="int">
+			<column name="start_num">
+			</column>
+		</property>
+		<property name="inNum" type="int">
+			<column name="in_num">
+			</column>
+		</property>
+		<property name="outNum" type="int">
+			<column name="out_num">
+			</column>
+		</property>
+		<property name="endTime" type="java.util.Date">
+			<column name="end_time" not-null="false" />
+		</property>
+		<property name="endNum" type="int">
+			<column name="end_num">
+			</column>
+		</property>
+		<property name="startTime1" type="java.util.Date">
+			<column name="startTime1" not-null="false" />
+		</property>
+		<property name="endTime1" type="java.util.Date">
+			<column name="endTime1" not-null="false" />
+		</property>
+		<property name="situation1" type="string">
+			<column name="situation1">
+			</column>
+		</property>
+		<property name="startTime2" type="java.util.Date">
+			<column name="startTime2" not-null="false" />
+		</property>
+		<property name="endTime2" type="java.util.Date">
+			<column name="endTime2" not-null="false" />
+		</property>
+		<property name="situation2" type="string">
+			<column name="situation2">
+			</column>
+		</property>
+		<property name="startTime3" type="java.util.Date">
+			<column name="startTime3" not-null="false" />
+		</property>
+		<property name="endTime3" type="java.util.Date">
+			<column name="endTime3" not-null="false" />
+		</property>
+		<property name="situation3" type="string">
+			<column name="situation3">
+			</column>
+		</property>
+		<property name="startTime4" type="java.util.Date">
+			<column name="startTime4" not-null="false" />
+		</property>
+		<property name="endTime4" type="java.util.Date">
+			<column name="endTime4" not-null="false" />
+		</property>
+		<property name="situation4" type="string">
+			<column name="situation4">
+			</column>
+		</property>
+		<property name="startTime5" type="java.util.Date">
+			<column name="startTime5" not-null="false" />
+		</property>
+		<property name="endTime5" type="java.util.Date">
+			<column name="endTime5" not-null="false" />
+		</property>
+		<property name="situation5" type="string">
+			<column name="situation5">
+			</column>
+		</property>
+		<property name="startTime6" type="java.util.Date">
+			<column name="startTime6" not-null="false" />
+		</property>
+		<property name="endTime6" type="java.util.Date">
+			<column name="endTime6" not-null="false" />
+		</property>
+		<property name="situation6" type="string">
+			<column name="situation6">
+			</column>
+		</property>
+		<property name="startTime7" type="java.util.Date">
+			<column name="startTime7" not-null="false" />
+		</property>
+		<property name="endTime7" type="java.util.Date">
+			<column name="endTime7" not-null="false" />
+		</property>
+		<property name="situation7" type="string">
+			<column name="situation7">
+			</column>
+		</property>
+		<property name="startTime8" type="java.util.Date">
+			<column name="startTime8" not-null="false" />
+		</property>
+		<property name="endTime8" type="java.util.Date">
+			<column name="endTime8" not-null="false" />
+		</property>
+		<property name="situation8" type="string">
+			<column name="situation8">
+			</column>
+		</property>
+		<property name="startTime9" type="java.util.Date">
+			<column name="startTime9" not-null="false" />
+		</property>
+		<property name="endTime9" type="java.util.Date">
+			<column name="endTime9" not-null="false" />
+		</property>
+		<property name="situation9" type="string">
+			<column name="situation9">
+			</column>
+		</property>
+		
+		<property name="startTime10" type="java.util.Date">
+			<column name="startTime10" not-null="false" />
+		</property>
+		<property name="endTime10" type="java.util.Date">
+			<column name="endTime10" not-null="false" />
+		</property>
+		<property name="situation10" type="string">
+			<column name="situation10">
+			</column>
+		</property>
+		<property name="startTime11" type="java.util.Date">
+			<column name="startTime11" not-null="false" />
+		</property>
+		<property name="endTime11" type="java.util.Date">
+			<column name="endTime11" not-null="false" />
+		</property>
+		<property name="situation11" type="string">
+			<column name="situation11">
+			</column>
+		</property>
+		<property name="startTime12" type="java.util.Date">
+			<column name="startTime12" not-null="false" />
+		</property>
+		<property name="endTime12" type="java.util.Date">
+			<column name="endTime12" not-null="false" />
+		</property>
+		<property name="situation12" type="string">
+			<column name="situation12">
+			</column>
+		</property>
+		<property name="startTime13" type="java.util.Date">
+			<column name="startTime13" not-null="false" />
+		</property>
+		<property name="endTime13" type="java.util.Date">
+			<column name="endTime13" not-null="false" />
+		</property>
+		<property name="situation13" type="string">
+			<column name="situation13">
+			</column>
+		</property>
+		<property name="state" type="int">
+			<column name="state" length="1" not-null="true" default="1">
+			</column>
+		</property>
+		<property name="updateTime" type="java.util.Date">
+			<column name="update_time" not-null="false" />
+		</property>
+		<property name="addTime" type="java.util.Date">
+			<column name="add_time" not-null="true" />
+		</property>
+		<property name="prisonCode" type="java.lang.String">
+			<column name="prison_code" not-null="false" />
+		</property>
+		<property name="isSync" type="int">
+			<column name="is_sync" length="1" />
+		</property>
+	</class>
+</hibernate-mapping>

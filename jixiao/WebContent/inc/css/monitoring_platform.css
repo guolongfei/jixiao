@@ -1,0 +1,318 @@
+body
+        {
+            font-family: 微软雅黑;
+        }
+        .index_footer
+        {
+            position: fixed;
+            bottom: 24px;
+            left: 38%;
+            text-align: center;
+            color: #f2f2f2;
+        }
+        .index_box
+        {
+            width: 720px;
+            margin: 0 auto;
+        }
+        .index_logo
+        {
+            text-align: center;
+            margin: 45px 0 15px 0;
+        }
+        .index_tit
+        {
+            font-size: 30px;
+            line-height: 42px;
+            text-align: center;
+            color: #f1f1f1;
+            margin-bottom: 90px;
+        }
+        .index_btn
+        {
+            width: 162px;
+            height: 162px;
+            margin-right: 20px;
+            float: left;
+            font-size: 27px;
+            line-height: 160px;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+        }
+        .orange
+        {
+            background: url(img/111.png) no-repeat;
+        }
+        .orange:hover
+        {
+            background: url(img/110.png) no-repeat;
+        }
+        .red
+        {
+            background: url(img/22.png) no-repeat;
+        }
+        .red:hover
+        {
+            background: url(img/220.png) no-repeat;
+        }
+        .green
+        {
+            background: url(img/33.png) no-repeat;
+        }
+        .green:hover
+        {
+            background: url(img/330.png) no-repeat;
+        }
+        .blue
+        {
+            background: url(img/44.png) no-repeat;
+        }
+        .blue:hover
+        {
+            background: url(img/440.png) no-repeat;
+        }
+        .pn_box
+        {
+            width: 1001px;
+            margin: 0 auto;
+        }
+        .banner
+        {
+            height: 167px;
+        }
+        .nav_box
+        {
+            height: 41px;
+            background: url(img/nav_bg.png) repeat-x;
+            position: relative;
+        }
+        .nav
+        {
+            margin: 0;
+            padding: 0;
+        }
+        .nav li
+        {
+            float: left;
+            width: 158px;
+            height: 100%;
+            font-size: 16px;
+            line-height: 41px;
+            text-align: center;
+        }
+        .nav li a
+        {
+            display: block;
+            color: #333;
+        }
+        .nav li a:hover
+        {
+            background: url(img/nav_bg2.png) repeat-x;
+            color: #f4f4f4;
+        }
+        .nav .active
+        {
+            background: url(img/nav_bg2.png) repeat-x;
+            color: #f4f4f4;
+        }
+        .nav .active a
+        {
+            color: #f4f4f4;
+        }
+        .nav_two, .nav_two0, .nav_two1, .nav_two2, .nav_two3, .nav_two4, .nav_two5
+        {
+            position: absolute;
+            top: 41px;
+            left: 158px;
+            display: none;
+        }
+        .nav_two div, .nav_two0 div, .nav_two1 div, .nav_two2 div, .nav_two3 div, .nav_two4 div, .nav_two5 div
+        {
+            width: 158px;
+            height: 31px;
+            line-height: 31px;
+            text-align: center;
+            font-size: 15px;
+            background: #CF3A11;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        .nav_two div a, .nav_two0 div a, .nav_two1 div a, .nav_two2 div a, .nav_two3 div a, .nav_two4 div a, .nav_two5 div a
+        {
+            display: block;
+            color: #f4f4f4;
+            background: #CF3A11;
+        }
+        .nav_two div a:hover, .nav_two0 div a:hover, .nav_two1 div a:hover, .nav_two2 div a:hover, .nav_two3 div a:hover, .nav_two4 div a:hover, .nav_two5 div a:hover
+        {
+            background: #2135A9;
+            text-decoration: none;
+        }
+        .nav_two0
+        {
+            left: 0px;
+        }
+        .nav_two1
+        {
+            left: 158px;
+        }
+        .nav_two2
+        {
+            left: 316px;
+        }
+        .nav_two3
+        {
+            left: 474px;
+        }
+        .nav_two4
+        {
+            left: 632px;
+        }
+        .nav_two5
+        {
+            left: 790px;
+        }
+        .region_box
+        {
+            height: 84px;
+            border: 1px solid #E6B68B;
+            background: url(img/bg8.png) repeat-x;
+            padding: 12px;
+        }
+        .region_tit
+        {
+            font-size: 18px;
+            color: #913F2B;
+        }
+        .region_select
+        {
+            height: 33px;
+        }
+        .region_btn
+        {
+            height: 33px;
+            width: 45px;
+            margin: 0 0 10px 8px;
+        }
+        .today_news
+        {
+            border: 1px solid #E6B68B;
+            margin-top: 18px;
+        }
+        .today_news_tit
+        {
+            font-size: 18px;
+            color: #913F2B;
+            border-bottom: 1px solid #E7DBCD;
+            height: 22px;
+            line-height: 22px;
+            background: url(img/bg9.png) repeat-x;
+            padding: 12px;
+        }
+        .today_news_info
+        {
+            padding: 12px;
+            height: 465px;
+        }
+        .today_news_info_tit
+        {
+            font-size: 15px;
+            color: #000;
+            margin-bottom: 15px;
+        }
+        .tnib
+        {
+            width: 132px;
+            height: 33px;
+            line-height: 33px;
+            border: 1px solid #999;
+            -webkit-border-radius: 7px;
+            -moz-border-radius: 7px;
+            -ms-border-radius: 7px;
+            -o-border-radius: 7px;
+            border-radius: 7px;
+            background: #f7f7f7;
+            text-align: center;
+            color: #777;
+            float: left;
+            margin: 0 12px 12px 0;
+            cursor: pointer;
+        }
+        .tnib:hover
+        {
+            background: #fff;
+        }
+        .thisnum
+        {
+            padding: 0 3px;
+        }
+        .info_box_top
+        {
+            border: 1px solid #E6B68B;
+            height: 300px;
+            padding: 12px;
+        }
+        .info_box_bottom
+        {
+            border: 1px solid #E6B68B;
+            height: 300px;
+            padding: 12px;
+        }
+        .footer
+        {
+            margin: 36px 0 15px 0;
+            text-align: center;
+            color: #333;
+            border-top: 1px solid #ccc;
+            padding-top: 15px;
+        }
+        .twoTit
+        {
+            background: url(img/twoTit_bg.png) repeat-x;
+            height: 38px;
+            line-height: 38px;
+            font-size: 15px;
+            color: #444;
+            -webkit-border-radius: 12px 12px;
+            -moz-border-radius: 12px / 12px;
+            border-radius: 12px / 12px;
+            padding: 0 24px;
+        }
+        .red_sj
+        {
+            font-size: 13px;
+            color: #B05C3F;
+            padding: 0 8px 0 0;
+        }
+        .two_box
+        {
+            padding: 20px;
+            border: 1px solid #E6B68B;
+            margin: 20px 0 0 0;
+        }
+        .two_box .two_box_info
+        {
+            padding: 24px;
+            background: #F9F9F9;
+        }
+        .two_box .two_box_info .two_box_info_tit
+        {
+            font-size: 16px;
+            color: #333;
+            margin: 0 0 24px 0;
+            font-weight: bold;
+        }
+        .two_box .two_box_info .form_box
+        {
+            margin: 0 0 8px 0;
+        }
+        .two_box .two_box_info .form_box .form_box_name
+        {
+            padding: 5px 0 0 0;
+            color: #555;
+        }
+        .two_box .two_box_info .form_box .form_box_name .red_star
+        {
+            color: #f00;
+            margin: 7px 7px 0 -14px;
+        }

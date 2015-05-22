@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="DevChnInfo" table="DevChnInfo">
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+        <property name="devID" type="string">
+            <column name="DevID" length="10"/>
+        </property>
+        <property name="devChanID" type="string">
+            <column name="DevChanID"  length="10"/>
+        </property>
+        <property name="chnName" type="string">
+            <column name="ChnName" length="250"/>
+        </property>
+        <property name="type" type="string">
+            <column name="Type"  length="10"/>
+        </property>
+        <property name="channel" type="string">
+            <column name="Channel" length="50"/>
+        </property>
+        <property name="chnDesc" type="string">
+            <column name="ChnDesc" length="100"/>
+        </property>
+        <property name="brandName" type="string">
+            <column name="BrandName" length="100"/>
+        </property>
+        <property name="modelName" type="string">
+            <column name="ModelName" length="100"/>
+        </property>
+        <property name="videoSoureId" type="string">
+            <column name="VideoSoureId"/>
+        </property>
+        <property name="state" type="string">
+            <column name="State" length="10"/>
+        </property>
+        <property name="resevre1" type="string">
+            <column name="Resevre1" length="50"/>
+        </property>
+        <property name="resevre2" type="string">
+            <column name="Resevre2" length="50"/>
+        </property>
+        <property name="resevre3" type="string">
+            <column name="Resevre3" length="50"/>
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

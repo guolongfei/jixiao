@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="Evaluation" table="Evaluation">
+		<comment></comment>
+		<id name="evaluation_id" column="evaluation_id">
+			<generator class="uuid" />
+		</id>
+		<property name="employee_id" type="string">
+			<column name="employee_id" />
+		</property>
+		<property name="lastscore" type="java.lang.Integer">
+			<column name="lastscore"/>
+		</property>
+		<property name="evaluation_time" type="date">
+			<column name="evaluation_time" />
+		</property>
+		<property name="evaluation_type" type="java.lang.Integer">
+			<column name="evaluation_type" />
+		</property>
+		<property name="evaluation_begintime" type="date">
+			<column name="evaluation_begintime" />
+		</property>
+		<property name="evaluation_content" type="string">
+			<column name="evaluation_content" />
+		</property>
+	</class>
+</hibernate-mapping>

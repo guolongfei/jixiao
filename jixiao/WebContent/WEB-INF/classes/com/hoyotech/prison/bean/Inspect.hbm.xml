@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="Inspect" table="inspect">
+		<comment></comment>
+		<id name="id" column="id">
+			<generator class="uuid.hex" />
+		</id>
+		<property name="time" type="java.util.Date">
+			<column name="time" not-null="false" />
+		</property>
+		<property name="name1" type="string">
+			<column name="name1">
+			</column>
+		</property>
+		<property name="unit1" type="string">
+			<column name="unit1">
+			</column>
+		</property>
+		<property name="post1" type="string">
+			<column name="post1">
+			</column>
+		</property>
+		<property name="name2" type="string">
+			<column name="name2">
+			</column>
+		</property>
+		<property name="unit2" type="string">
+			<column name="unit2">
+			</column>
+		</property>
+		<property name="post2" type="string">
+			<column name="post2">
+			</column>
+		</property>
+		<property name="name3" type="string">
+			<column name="name3">
+			</column>
+		</property>
+		<property name="unit3" type="string">
+			<column name="unit3">
+			</column>
+		</property>
+		<property name="post3" type="string">
+			<column name="post3">
+			</column>
+		</property>
+		<property name="name4" type="string">
+			<column name="name4">
+			</column>
+		</property>
+		<property name="unit4" type="string">
+			<column name="unit4">
+			</column>
+		</property>
+		<property name="post4" type="string">
+			<column name="post4">
+			</column>
+		</property>
+		<property name="name5" type="string">
+			<column name="name5">
+			</column>
+		</property>
+		<property name="unit5" type="string">
+			<column name="unit5">
+			</column>
+		</property>
+		<property name="post5" type="string">
+			<column name="post5">
+			</column>
+		</property>
+		<property name="name6" type="string">
+			<column name="name6">
+			</column>
+		</property>
+		<property name="unit6" type="string">
+			<column name="unit6">
+			</column>
+		</property>
+		<property name="post6" type="string">
+			<column name="post6">
+			</column>
+		</property>
+		<property name="name7" type="string">
+			<column name="name7">
+			</column>
+		</property>
+		<property name="unit7" type="string">
+			<column name="unit7">
+			</column>
+		</property>
+		<property name="post7" type="string">
+			<column name="post7">
+			</column>
+		</property>
+		<property name="name8" type="string">
+			<column name="name8">
+			</column>
+		</property>
+		<property name="unit8" type="string">
+			<column name="unit8">
+			</column>
+		</property>
+		<property name="post8" type="string">
+			<column name="post8">
+			</column>
+		</property>
+		<property name="name9" type="string">
+			<column name="name9">
+			</column>
+		</property>
+		<property name="unit9" type="string">
+			<column name="unit9">
+			</column>
+		</property>
+		<property name="post9" type="string">
+			<column name="post9">
+			</column>
+		</property>
+		<property name="name10" type="string">
+			<column name="name10">
+			</column>
+		</property>
+		<property name="unit10" type="string">
+			<column name="unit10">
+			</column>
+		</property>
+		<property name="post10" type="string">
+			<column name="post10">
+			</column>
+		</property>
+		<property name="inspectContent" type="string">
+			<column name="inspect_content">
+			</column>
+		</property>
+		<property name="instructions" type="string">
+			<column name="instructions">
+			</column>
+		</property>
+		<property name="state" type="int">
+			<column name="state" length="1" not-null="true" default="1">
+			</column>
+		</property>
+		<property name="updateTime" type="java.util.Date">
+			<column name="update_time" not-null="false" />
+		</property>
+		<property name="addTime" type="java.util.Date">
+			<column name="add_time" not-null="true" />
+		</property>
+		<property name="prisonCode" type="java.lang.String">
+			<column name="prison_code" not-null="false" />
+		</property>
+		<property name="isSync" type="int">
+			<column name="is_sync" length="1" />
+		</property>
+	</class>
+</hibernate-mapping>

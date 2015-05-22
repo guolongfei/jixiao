@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="SthIn" table="sthIn">
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+        <many-to-one name="prisoner" class="Prisoner" fetch="select" lazy="false">
+            <column name="prisoner_id" />
+        </many-to-one>
+        <property name="inType" type="int">
+            <column name="in_type"/>
+        </property>
+        <property name="trans_people" type="string">
+            <column name="transPeople" length="10"/>
+        </property>
+        <property name="tel" type="string">
+            <column name="tel" length="20"/>
+        </property>
+        <property name="money" type="java.math.BigDecimal">
+            <column name="money" length="20" precision="16" scale="2"/>
+        </property>
+        <property name="addTime" type="java.util.Date">
+            <column name="add_time" not-null="true" />
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time" />
+        </property>
+        <property name="prisonCode" type="string">
+            <column name="prison_code" />
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

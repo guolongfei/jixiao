@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    
+    <package name="manage" extends="struts-default" namespace="/manage">
+        <global-results>
+        	<result name="main" type="redirect">prisonerMain_detail.action?id=${id}&amp;type=${type}</result>
+        </global-results>
+	    <!-- 组织结构管理 -->
+		<action name="organization_*" class="organizationAction" method="{1}">
+			<result name="list">/WEB-INF/content/organization/organizationList.jsp</result>
+			<result name="stlist">/WEB-INF/content/st_organization/organizationList.jsp</result>
+			<result name="addUI">/WEB-INF/content/organization/organizationAdd.jsp</result>
+			<result name="detail">/WEB-INF/content/organization/organizationDetail.jsp</result>
+			<result name="stdetail">/WEB-INF/content/st_organization/organizationDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/organization/organizationEdit.jsp</result>
+			<result name="Detail" type="redirect">organization_detail.action?id=${id}</result>
+			<result name="select" type="redirect">organization_list.action</result>
+		</action>
+		<!-- 警务人员管理 -->
+		<action name="police_*" class="policeAction" method="{1}">
+			<result name="list">/WEB-INF/content/police/policeList.jsp</result>
+			<result name="addUI">/WEB-INF/content/police/policeAdd.jsp</result>
+			<result name="detail">/WEB-INF/content/police/policeDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/police/policeEdit.jsp</result>
+			<result name="Detail" type="redirect">police_detail.action?id=${id}</result>
+			<result name="select" type="redirect">police_list.action</result>
+		</action>
+		<!-- 设备管理 -->
+		<action name="device_*" class="prisonDeviceAction" method="{1}">
+			<result name="list">/WEB-INF/content/device/deviceList.jsp</result>
+			<result name="addUI">/WEB-INF/content/device/deviceAdd.jsp</result>
+			<result name="detail">/WEB-INF/content/device/deviceDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/device/deviceEdit.jsp</result>
+			<result name="Detail" type="redirect">device_detail.action?id=${id}</result>
+			<result name="select" type="redirect">device_list.action</result>
+		</action>
+		<!-- 拘留区域管理 -->	
+		<action name="detentionArea_*" class="detentionAreaAction" method="{1}">
+			<result name="list">/WEB-INF/content/detentionArea/detentionAreaList.jsp</result>
+			<result name="addUI">/WEB-INF/content/detentionArea/detentionAreaAdd.jsp</result>
+			<result name="detail">/WEB-INF/content/detentionArea/detentionAreaDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/detentionArea/detentionAreaEdit.jsp</result>
+			<result name="Detail" type="redirect">detentionArea_detail.action?id=${id}</result>
+			<result name="select" type="redirect">detentionArea_list.action</result>
+		</action>
+		<!-- 拘留室管理 -->
+		<action name="detentionInfo_*" class="detentionInfoAction" method="{1}">
+			<result name="list">/WEB-INF/content/detentionInfo/detentionInfoList.jsp</result>
+			<result name="addUI">/WEB-INF/content/detentionInfo/detentionInfoAdd.jsp</result>
+			<result name="detail">/WEB-INF/content/detentionInfo/detentionInfoDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/detentionInfo/detentionInfoEdit.jsp</result>
+			<result name="Detail" type="redirect">detentionInfo_detail.action?id=${id}</result>
+			<result name="select" type="redirect">detentionInfo_list.action</result>
+		</action>
+		
+		<!-- 被拘留人 -->
+		<action name="prisoner_*" class="prisonerAction" method="{1}">
+			<result name="List">/WEB-INF/content/prisoner/prisonerList.jsp</result>
+			<result name="OutPrisonerList">/WEB-INF/content/prisoner/prisonerList.jsp</result>
+			<result name="Edit">/WEB-INF/content/prisoner/prisonerEdit.jsp</result>
+			<result name="Add">/WEB-INF/content/prisoner/prisonerAdd.jsp</result>
+			<result name="Detail">/WEB-INF/content/prisoner/prisonerDetail.jsp</result>
+			<result name="detail" type="redirect">prisoner_detail.action?id=${id}</result>
+			<result name="select" type="redirect">prisoner_select.action</result>
+			<result name="doc">/WEB-INF/content/prisoner/prisoner_doc.jsp</result>
+			<result name="uploadUI">/WEB-INF/content/prisoner/prisonerUpload.jsp</result>
+			<result name="finger">/WEB-INF/content/prisoner/fingerPrint.jsp</result>
+			<!-- 快速添加——下一步：添加健康检查表 -->
+			<result name="next" type="redirect">prisonerHealth_addUI.action?id=${id}&amp;mode=${mode}&amp;step=${step}&amp;complete=${complete}</result>
+			<result name="kuaisu" type="redirect">prisoner_interAdd.action?mode=wizard</result>
+			<result name="allPrint">/WEB-INF/content/prisoner/inPrisonPrint.jsp</result>
+			<result name="prisonerDetentionAre">/WEB-INF/content/detentionAreChange/detentionAreChange.jsp</result>
+		</action>
+		<!-- 健康检查 -->
+		<action name="prisonerHealth_*" class="prisonerHealthAction" method="{1}">
+			<result name="selectMedicList">/WEB-INF/content/prisonerHealth/prisonerHealthMedicAdd.jsp</result>
+			<result name="insertTakeMedicState" type="redirect">prisonerHealth_queryTakeMedicList.action?id=${id}</result>
+			<result name="addUI">/WEB-INF/content/prisonerHealth/prisonerHealthAdd.jsp</result>
+			<result name="editUI">/WEB-INF/content/prisonerHealth/prisonerHealthEdit.jsp</result>
+			<result name="detail">/WEB-INF/content/prisonerHealth/prisonerHealthDetail.jsp</result>
+			<result name="doc">/WEB-INF/content/prisonerHealth/prisonerHealth_doc.jsp</result>
+			<result name="Detail" type="redirect">prisonerHealth_detail.action?id=${id}</result>
+			<!-- 快速添加——下一步：添加健康检查表 -->
+			<result name="next" type="redirect">prisonerGoods_addUI.action?id=${id}&amp;mode=${mode}&amp;step=${step}&amp;complete=${complete}</result>
+		</action>
+		<!-- 涉案物品管理 -->
+		<action name="contrabandGoods_*" class="contrabandGoodsAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/contrabandGoods/contrabandGoodsAdd.jsp</result>
+			<result name="addGoodsUI">/WEB-INF/content/contrabandGoods/contrabandGoodsAdd1.jsp</result>
+			<result name="detail">/WEB-INF/content/contrabandGoods/contrabandGoodsList.jsp</result>
+			<result name="doc">/WEB-INF/content/contrabandGoods/contrabandGoods_doc.jsp</result>
+			<result name="Detail" type="redirect">contrabandGoods_detail.action?id=${id}</result>
+		</action>
+		<!-- 暂存物品管理 -->
+		<action name="prisonerGoods_*" class="prisonerGoodsAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/prisonerGoods/prisonerGoodsAdd.jsp</result>
+			<result name="addGoods">/WEB-INF/content/prisonerGoods/goodsAdd.jsp</result>
+			<result name="edit">/WEB-INF/content/prisonerGoods/prisonerGoodsEdit.jsp</result>
+			<result name="editGoods">/WEB-INF/content/prisonerGoods/goodsEdit.jsp</result>
+			<result name="detail">/WEB-INF/content/prisonerGoods/prisonerGoodsList.jsp</result>
+			<result name="doc">/WEB-INF/content/prisonerGoods/prisonerGoods_doc.jsp</result>
+			<result name="Detail" type="redirect">prisonerGoods_detail.action?id=${id}&amp;mode=${mode}&amp;step=${step}&amp;complete=${complete}</result>
+		</action>
+		<!-- 临时寄押 -->
+		<action name="sendExamine_*" class="sendExamineAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/sendExamine/sendExamineAdd.jsp</result>
+			<result name="detail">/WEB-INF/content/sendExamine/sendExamineDetail.jsp</result>
+			<result name="doc">/WEB-INF/content/sendExamine/sendExamine_doc.jsp</result>
+			<result name="Detail" type="redirect">sendExamine_detail.action?id=${id}</result>
+			<result name="edit">/WEB-INF/content/sendExamine/sendExamineEdit.jsp</result>
+		</action>
+		<!-- 异地执行拘留 -->
+		<action name="executeReturn_*" class="executeReturnAction" method="{1}">
+			<result name="doc">/WEB-INF/content/executeReturn/executeReturn_doc.jsp</result>
+			<result name="addUI">/WEB-INF/content/executeReturn/executeReturnAdd.jsp</result>
+			<result name="detail">/WEB-INF/content/executeReturn/executeReturnDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/executeReturn/executeReturnEdit.jsp</result>
+			<result name="Detail" type="redirect">executeReturn_detail.action?id=${id}</result>
+		</action>
+		<!-- 停止执行拘留通知书-->
+		<action name="stopDetain_*" class="stopDetainAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/stopDetain/stopDetainAdd.jsp</result>
+			<result name="doc">/WEB-INF/content/stopDetain/stopDetain_doc.jsp</result>
+			<result name="detail">/WEB-INF/content/stopDetain/stopDetainDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/stopDetain/stopDetainEdit.jsp</result>
+			<result name="Detail" type="redirect">stopDetain_detail.action?id=${id}</result>
+		</action>
+		<!-- 被拘留人请假出所审批表-->
+		<action name="outprison_*" class="outprisonAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/outPrison/outPrisonAdd.jsp</result>
+			<result name="doc">/WEB-INF/content/outPrison/outprison_doc.jsp</result>
+			<result name="list">/WEB-INF/content/outPrison/outPrisonList.jsp</result>
+			<result name="detail">/WEB-INF/content/outPrison/outPrisonDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/outPrison/outPrisonEdit.jsp</result>
+			<result name="Detail" type="redirect">outprison_detail.action?id=${id}</result>
+			<result name="select" type="redirect">outprison_select.action</result>
+		</action>
+		<!-- 被拘留人请假证明-->
+		<action name="outprove_*" class="outprisonAction" method="{1}">
+			<result name="doc">/WEB-INF/content/outprisonProve/outprisonProve_doc.jsp</result>
+		</action>
+		<!-- 被拘留人请假到期通知书-->
+		<action name="leaveEx_*" class="leaveExAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/leaveExpires/leaveExpiresAdd.jsp</result>
+			<result name="doc">/WEB-INF/content/leaveExpires/leaveExpires_doc.jsp</result>
+			<result name="list">/WEB-INF/content/leaveExpires/leaveExpiresList.jsp</result>
+			<result name="detail">/WEB-INF/content/leaveExpires/leaveExpiresDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/leaveExpires/leaveExpiresEdit.jsp</result>
+			<result name="Detail" type="redirect">leaveEx_detail.action?id=${id}</result>
+			<result name="select" type="redirect">leaveEx_select.action</result>
+		</action>
+		<!-- 代为执行行政拘留委托书-->
+		<action name="exeDetain_*" class="executionDetainAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/exeDetain/exeDetainAdd.jsp</result>
+			<result name="doc">/WEB-INF/content/exeDetain/executionDetain_doc.jsp</result>
+			<result name="detail">/WEB-INF/content/exeDetain/exeDetainDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/exeDetain/exeDetainEdit.jsp</result>
+			<result name="Detail" type="redirect">exeDetain_detail.action?id=${id}</result>
+		</action>
+		<!-- 使用警械审批表-->
+		<action name="useWeapon_*" class="useWeaponAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/useWeapon/useWeaponAdd.jsp</result>
+			<result name="doc">/WEB-INF/content/useWeapon/useWeapon_doc.jsp</result>
+			<result name="list">/WEB-INF/content/useWeapon/useWeaponList.jsp</result>
+			<result name="detail">/WEB-INF/content/useWeapon/useWeaponDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/useWeapon/useWeaponEdit.jsp</result>
+			<result name="Detail" type="redirect">useWeapon_detail.action?id=${id}</result>
+			<result name="select" type="redirect">useWeapon_select.action</result>
+		</action>
+		<!-- 询问被拘留人登记表-->
+		<action name="askRegi_*" class="askRegiAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/askRegistration/askRegistrationAdd.jsp</result>
+			<result name="doc">/WEB-INF/content/askRegistration/askRegistration_doc.jsp</result>
+			<result name="list">/WEB-INF/content/askRegistration/askRegistrationList.jsp</result>
+			<result name="detail">/WEB-INF/content/askRegistration/askRegistrationDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/askRegistration/askRegistrationEdit.jsp</result>
+			<result name="Detail" type="redirect">askRegi_detail.action?id=${id}</result>
+			<result name="select" type="redirect">askRegi_select.action</result>
+			<result name="tz_List">/WEB-INF/content/sb_askRegister/askRegisterList.jsp</result>
+			<result name="tz_Detail">/WEB-INF/content/sb_askRegister/askRegisterDetail.jsp</result>
+			<result name="ListPrint">/WEB-INF/content/sb_askRegister/askRegisterPrint.jsp</result>
+			<result name="arraign_Detail">/WEB-INF/content/sb_askRegister/arraignDetail.jsp</result>
+		</action>
+		<!-- 提解被拘留人登记表-->
+		<action name="arraign_*" class="arraignAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/arraign/arraignAdd.jsp</result>
+			<result name="doc">/WEB-INF/content/arraign/arraignPrisoner_doc.jsp</result>
+			<result name="list">/WEB-INF/content/arraign/arraignList.jsp</result>
+			<result name="detail">/WEB-INF/content/arraign/arraignDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/arraign/arraignEdit.jsp</result>
+			<result name="Detail" type="redirect">arraign_detail.action?id=${id}</result>
+			<result name="select" type="redirect">arraign_select.action</result>
+		</action>
+		<!-- 被拘留人申诉控告等材料转递函-->
+		<action name="appealDataPass_*" class="appealDataPassAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/appealDataPass/appealDataPassAdd.jsp</result>
+			<result name="doc">/WEB-INF/content/appealDataPass/appealDataPass_doc.jsp</result>
+			<result name="detail">/WEB-INF/content/appealDataPass/appealDataPassDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/appealDataPass/appealDataPassEdit.jsp</result>
+			<result name="Detail" type="redirect">appealDataPass_detail.action?id=${id}</result>
+		</action>
+		<!--死亡通知书-->
+		<action name="deathNotice_*" class="deathNoticeAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/deathNotice/deathNoticeAdd.jsp</result>
+			<result name="doc">/WEB-INF/content/deathNotice/deathNotice_doc.jsp</result>
+			<result name="detail">/WEB-INF/content/deathNotice/deathNoticeDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/deathNotice/deathNoticeEdit.jsp</result>
+			<result name="Detail" type="redirect">deathNotice_detail.action?id=${id}</result>
+		</action>
+		<!--解除拘留证明书-->
+		<action name="removeDetain_*" class="removeDetainAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/removeDetain/removeDetainAdd.jsp</result>
+			<result name="doc">/WEB-INF/content/removeDetain/removeDetain_doc.jsp</result>
+			<result name="detail">/WEB-INF/content/removeDetain/removeDetainDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/removeDetain/removeDetainEdit.jsp</result>
+			<result name="Detail" type="redirect">removeDetain_detail.action?id=${id}</result>
+		</action>
+		<!--建议另行处理通知书-->
+		<action name="handleSeparate_*" class="handleSeparateAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/handleSeparate/handleSeparateAdd.jsp</result>
+			<result name="doc">/WEB-INF/content/handleSeparate/handleSeparate_doc.jsp</result>
+			<result name="detail">/WEB-INF/content/handleSeparate/handleSeparateDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/handleSeparate/handleSeparateEdit.jsp</result>
+			<result name="Detail" type="redirect">handleSeparate_detail.action?id=${id}</result>
+		</action>
+		<!--可能错误拘留-->
+		<action name="wrongDetain_*" class="wrongDetainAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/wrongDetain/wrongDetainAdd.jsp</result>
+			<result name="doc">/WEB-INF/content/wrongDetain/wrongDetain_doc.jsp</result>
+			<result name="detail">/WEB-INF/content/wrongDetain/wrongDetainDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/wrongDetain/wrongDetainEdit.jsp</result>
+			<result name="Detail" type="redirect">wrongDetain_detail.action?id=${id}</result>
+		</action>
+		<!--拘留回执-->
+		<action name="detainReturn_*" class="detainReturnAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/detainReturn/detainReturnAdd.jsp</result>
+			<result name="doc">/WEB-INF/content/detainReturn/detainReturn_doc.jsp</result>
+			<result name="detail">/WEB-INF/content/detainReturn/detainReturnDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/detainReturn/detainReturnEdit.jsp</result>
+			<result name="Detail" type="redirect">detainReturn_detail.action?id=${id}</result>
+		</action>
+		<!--不予拘留-->
+		<action name="refuseDetain_*" class="refuseDetainAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/refuseDetain/refuseDetainAdd.jsp</result>
+			<result name="doc">/WEB-INF/content/refuseDetain/refuseDetain_doc.jsp</result>
+			<result name="detail">/WEB-INF/content/refuseDetain/refuseDetainDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/refuseDetain/refuseDetainEdit.jsp</result>
+			<result name="Detail" type="redirect">refuseDetain_detail.action?id=${id}</result>
+		</action>
+		<!--违法犯罪线索传递函-->
+		<action name="crimeKeyPass_*" class="crimekeyPassAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/crimeKeyPass/crimeKeyPassAdd.jsp</result>
+			<result name="doc">/WEB-INF/content/crimeKeyPass/crimeKeyPass_doc.jsp</result>
+			<result name="detail">/WEB-INF/content/crimeKeyPass/crimeKeyPassDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/crimeKeyPass/crimeKeyPassEdit.jsp</result>
+			<result name="Detail" type="redirect">crimeKeyPass_detail.action?id=${id}</result>
+		</action>
+		<!-- 谈话记录 -->
+		<action name="memcon_*" class="memconAction" method="{1}">
+			<result name="list">/WEB-INF/content/memcon/memconList.jsp</result>
+			<result name="addUI">/WEB-INF/content/memcon/memconAdd.jsp</result>
+			<result name="detail">/WEB-INF/content/memcon/memconDetail.jsp</result>
+			<result name="Detail" type="redirect">memcon_detail.action?id=${id}</result>
+		</action>
+		<!--应急预案演练记录  -->
+		<action name="emergency_*" class="emergencyAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/sb_emergency/emergencyAdd.jsp</result>
+			<result name="list">/WEB-INF/content/sb_emergency/emergencyList.jsp</result>
+			<result name="detail">/WEB-INF/content/sb_emergency/emergencyDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/sb_emergency/emergencyEdit.jsp</result>
+			<result name="Detail" type="redirect">emergency_detail.action?id=${id}</result>
+			<result name="select" type="redirect">emergency_select.action</result>
+			<result name="tz_List">/WEB-INF/content/sb_askRegister/askRegisterList.jsp</result>
+			<result name="tz_Detail">/WEB-INF/content/sb_askRegister/askRegisterDetail.jsp</result>
+			<result name="ListPrint">/WEB-INF/content/sb_askRegister/askRegisterPrint.jsp</result>
+		</action>
+		<!--奖惩记录  -->
+		<action name="jiangcheng_*" class="jiangchengAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/jiangcheng/jiangchengAdd.jsp</result>
+			<result name="doc">/WEB-INF/content/jiangcheng/jiangcheng_doc.jsp</result>
+			<result name="list">/WEB-INF/content/jiangcheng/jiangchengList.jsp</result>
+			<result name="detail">/WEB-INF/content/jiangcheng/jiangchengDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/jiangcheng/jiangchengEdit.jsp</result>
+			<result name="Detail" type="redirect">jiangcheng_detail.action?id=${id}</result>
+			<result name="select" type="redirect">jiangcheng_select.action</result>
+		</action>
+		<!--风险评估  -->
+		<action name="riskAssess_*" class="riskAssessAction" method="{1}">
+			<result name="addUI">/WEB-INF/content/riskAssess/riskAssessAdd.jsp</result>
+			<result name="doc">/WEB-INF/content/riskAssess/riskAssess_doc.jsp</result>
+			<result name="list">/WEB-INF/content/riskAssess/riskAssessList.jsp</result>
+			<result name="detail">/WEB-INF/content/riskAssess/riskAssessDetail.jsp</result>
+			<result name="edit">/WEB-INF/content/riskAssess/riskAssessEdit.jsp</result>
+			<result name="Detail" type="redirect">riskAssess_detail.action?id=${id}</result>
+			<result name="select" type="redirect">riskAssess_select.action</result>
+			
+			<!-- 快速添加——下一步：风险评估表 -->
+			<!-- <result name="next" type="redirect">riskAssess_detailByPrisoner.action?id=${id}&amp;mode=${mode}&amp;step=${step}&amp;complete=${complete}</result>
+			-->
+			<result name="next" type="redirect">prisoner_select.action</result>
+		</action>
+
+	</package>  
+</struts>

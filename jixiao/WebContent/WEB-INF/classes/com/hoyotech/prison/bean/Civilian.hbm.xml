@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="Civilian" table="civilian">
+        <comment></comment>
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+        <property name="name" type="string">
+            <column name="name" length="60" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+       <many-to-one name="gender" class="Dictionary" fetch="select" lazy="false">
+			<column name="gender" length="1" not-null="true">
+				<comment></comment>
+			</column>
+		</many-to-one>
+        <property name="birthday" type="date">
+            <column name="birthday" length="10" not-null="false">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="idnumber" type="string">
+            <column name="IDNumber" length="30" not-null="false">
+                <comment></comment>
+            </column>
+        </property>
+         <many-to-one name="peoples" class="Peoples" fetch="select" lazy="false">
+			<column name="peoples" length="1" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+         <many-to-one name="politicalStatus" class="Dictionary" fetch="select" lazy="false">
+			<column name="political_status" length="2" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+        <many-to-one name="eduBackground" class="Dictionary" fetch="select" lazy="false">
+			<column name="edu_background" length="2" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="marryStatus" class="Dictionary" fetch="select" lazy="false">
+			<column name="marry_status" length="2" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="address" type="string">
+			<column name="detailed_address" length="80" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="phoneNum" type="string">
+            <column name="phone_Num" not-null="false">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="graduate" type="string">
+			<column name="graduate"  not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="graduateTime" type="date">
+			<column name="graduateTime"  not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="profession" type="string">
+			<column name="profession"  not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		
+        <property name="state" type="int">
+            <column name="state" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="prisonCode" type="string">
+            <column name="prison_code" length="9" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time" not-null="false" />
+        </property>
+        <property name="addTime" type="java.util.Date">
+            <column name="add_time" not-null="true" />
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

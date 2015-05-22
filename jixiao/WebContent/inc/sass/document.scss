@@ -1,0 +1,160 @@
+@import "compass";
+@import "compass/reset";
+@import "compass/layout/stretching";
+
+@include global-reset;
+body{
+    font-family: "微软雅黑", "华文细黑", "华文黑体", Arial;
+    @include stretch(0, 0, 0, 0);
+    overflow: hidden;
+    
+    #document-container{
+        margin: 0;
+        height: 100%;
+        .important-info{
+            color:#fff;
+            height:135px;
+            position:relative;
+            .guohui{
+              height:135px;
+              .headimg{
+                height:90px; 
+                width:90px;
+                float:left;
+                margin:10px 20px;
+                img{
+                  height:90px; 
+                  width:90px;
+                }
+              }
+            }
+            .nameinfo{
+              position:absolute;
+              right:0;
+              top:0;
+              width:391px;
+              .photo{
+                  height:125px;
+                  width:100px;
+                  position:absolute;
+                  top:5px;
+                  left:0;
+                  background:#000;
+                  cursor:pointer;
+                  img{
+                      height:125px;
+                      width:100px;
+                  }
+              }
+              #name{
+                  position:absolute;
+                  top:35px;
+                  left:115px;
+              }
+              #code{
+                  position:absolute;
+                  top:85px;
+                  left:115px;
+              }
+            }
+            
+        }
+        .document-wrapper {
+            position: relative;
+            height: 100%;
+        }
+        .document-content{
+            background:#ffffff;
+            @include stretch(-20px, 410px, 160px, 10px);
+            
+            iframe {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .nav{
+            width: 391px;
+            @include stretch(10px, 0, 160px, auto);
+            overflow-x: hidden;
+			overflow-y: auto;
+            zoom: 1;
+            .box{
+                @include pie-clearfix;
+                margin-bottom: 20px;
+                .title{
+                    background: url('../css/img/bg2-title.png') no-repeat;
+                    height:39px;
+                    line-height:39px;
+                    font-weight:bold ;
+                    color:#fff;
+                    padding-left:10px;
+                    @include border-radius(3px);
+                }
+                .icon-cell{
+                    float:left;
+                }
+            }
+        }
+    }
+}
+#block-wallpaper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index:-1;
+    background: url('../css/img/bg.png') repeat;
+}
+.icon-cell{
+    width:83px;
+    height:89px;
+    float:left;
+    cursor: pointer;
+    padding:20px 5px;
+    .icon{
+         height:60px;
+         text-align:center;
+         img{
+             height:60px;
+             width: 60px;
+         }
+    }
+    .monitor{
+        background: url('../css/img/monitor.png') no-repeat ;
+    }
+    .desktopicon_title{
+        overflow: visible;
+        color: white;
+        height: 20px;
+        text-align: center;
+        margin: 8px auto 0 auto;
+        max-width: 100%;
+        label {
+            @include inline-block;
+            cursor: pointer;
+            //background: rgba(0,0,0,0.25);
+            margin: 0;
+            padding: 0 8px;
+            text-align: center;
+            height: 20px;
+            line-height: 20px;
+            max-width: 100%;
+            overflow: hidden;
+            position: relative;
+            vertical-align: middle;
+            @include border-radius(8px);
+            @include ellipsis;
+            font-size:13px;
+        }
+    }
+    &:hover {
+        background: rgba(0,0,0,0.25);
+        @include border-radius(8px);
+        .desktopicon_title {
+            label {
+                background: none;
+            }
+        }
+    }
+}

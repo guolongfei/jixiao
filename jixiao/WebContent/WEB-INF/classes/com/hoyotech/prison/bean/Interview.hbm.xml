@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="Interview" table="interview">
+		<comment></comment>
+		<id name="id" column="id">
+			<generator class="uuid.hex" />
+		</id>
+		<property name="time" type="java.util.Date">
+			<column name="time" not-null="false" />
+		</property>
+		<property name="type" type="string">
+			<column name="type">
+			</column>
+		</property>
+		<many-to-one name="prisoner" class="Prisoner" fetch="select" lazy="false">
+            <column name="prisoner" not-null="false" />
+        </many-to-one>
+		<property name="meeter" type="string">
+			<column name="meeter">
+			</column>
+		</property>
+		<property name="relation" type="string">
+			<column name="relation">
+			</column>
+		</property>
+		<property name="address" type="string">
+			<column name="address">
+			</column>
+		</property>
+		<many-to-one name="documeType" class="Document" fetch="select"
+			lazy="false">
+			<column name="docume_type" length="3" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="documeNum" type="string">
+			<column name="docume_num" length="30" >
+				<comment></comment>
+			</column>
+		</property>
+		<property name="telephone" type="string">
+			<column name="telephone" length="30" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="startTime" type="java.util.Date">
+			<column name="start_time" not-null="false" />
+		</property>
+		<property name="endTime" type="java.util.Date">
+			<column name="end_time" not-null="false" />
+		</property>
+		<many-to-one name="policer" class="Police" fetch="select" lazy="false">
+            <column name="police" not-null="false" />
+        </many-to-one>
+		<property name="remark" type="string">
+			<column name="remark" length="200" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="state" type="int">
+			<column name="state" length="1" not-null="true" default="1">
+			</column>
+		</property>
+		<property name="updateTime" type="java.util.Date">
+			<column name="update_time" not-null="false" />
+		</property>
+		<property name="addTime" type="java.util.Date">
+			<column name="add_time" not-null="true" />
+		</property>
+		<property name="prisonCode" type="java.lang.String">
+			<column name="prison_code" not-null="false" />
+		</property>
+		<property name="isSync" type="int">
+			<column name="is_sync" length="1" />
+		</property>
+	</class>
+</hibernate-mapping>

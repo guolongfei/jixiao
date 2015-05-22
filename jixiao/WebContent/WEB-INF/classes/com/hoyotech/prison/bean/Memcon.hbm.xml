@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="Memcon" table="memcon">
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+        <many-to-one name="prisoner" class="Prisoner" fetch="select" lazy="false">
+            <column name="prisoner_id" />
+        </many-to-one>
+        <many-to-one name="questioner" class="Police" fetch="select" lazy="false">
+            <column name="questioner" not-null="false" />
+        </many-to-one>
+        <property name="talkTime" type="date">
+            <column name="talk_time" />
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="255" />
+        </property>
+        <property name="state" type="int">
+            <column name="state" not-null="true" />
+        </property>
+        <property name="addTime" type="java.util.Date">
+            <column name="add_time" not-null="true" />
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time" />
+        </property>
+        <property name="prisonCode" type="string">
+            <column name="prison_code" />
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

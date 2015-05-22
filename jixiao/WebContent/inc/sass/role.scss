@@ -1,0 +1,22 @@
+@import "compass";
+
+.form-row .detail{width:80%;}
+.form-row .detail span label {font-size:16px;}
+.role-box{
+  margin:0 0 18px 120px;
+  .title{
+  	color: #666666;
+    font-weight: bold;
+    margin-bottom: 7px;
+  }
+  .role{
+    label{
+      @include inline-block;
+	  //display:inline;
+	  width:28%;
+      input{
+        margin-top:2px;
+      }
+    }
+  }
+}

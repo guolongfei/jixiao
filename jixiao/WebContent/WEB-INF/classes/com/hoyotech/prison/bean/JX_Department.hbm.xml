@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="JX_Department" table="JX_Department">
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+        <property name="name" type="java.lang.String">
+            <column name="name" not-null="false" />
+        </property>
+         <property name="pid" type="java.lang.String">
+            <column name="pid"/>
+        </property>
+        <property name="level" type="java.lang.Integer">
+            <column name="lev"/>
+        </property>
+        <property name="add_date" type="date">
+            <column name="add_date"/>
+        </property>        
+    </class>
+</hibernate-mapping>

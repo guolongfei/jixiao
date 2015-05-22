@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    
+    <package name="cw" extends="struts-default" namespace="/cw">
+    	<action name="cw_*" class="goodItemAction" method="{1}">
+    		<result name="list">/WEB-INF/content/cw/cwList.jsp</result>
+    		<result name="addUI">/WEB-INF/content/cw/cwProAdd.jsp</result>
+    		<result name="add" type="redirect">cw_select.action</result>
+    		<result name="sell_show">/WEB-INF/content/cw/cwProSell.jsp</result>
+    		<result name="sthInUI">/WEB-INF/content/cw/cwSthIn.jsp</result>
+    	</action>
+	</package>
+	
+	<package name="yl" extends="struts-default" namespace="/yl">
+		<action name="yl_*" class="medicalTreatmentAction" method="{1}">
+			<result name="selectType">/WEB-INF/content/yl/drugTypeList.jsp</result>
+			<result name="editeTypeUI">/WEB-INF/content/yl/editeTypeUI.jsp</result>
+			<result name="addtype" type="redirect">yl_selectType.action</result>
+			<result name="modifyType" type="redirect">yl_selectType.action</result>
+			<result name="selectDrug">/WEB-INF/content/yl/drugList.jsp</result>
+			<result name="editeDrugUI">/WEB-INF/content/yl/editeDrugUI.jsp</result>
+			<result name="addDrug" type="redirect">yl_selectDrug.action</result>
+		</action>
+	</package>
+</struts>

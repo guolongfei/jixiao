@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="Reception" table="reception">
+		<comment></comment>
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+        <many-to-one name="leadName" class="Police" fetch="select" lazy="false">
+            <column name="lead_name" />
+        </many-to-one>
+		 <property name="time" type="date">
+            <column name="time">
+            </column>
+        </property>
+        <property name="address" type="string">
+            <column name="address">
+            </column>
+        </property>
+		 <property name="visitName" type="string">
+            <column name="visit_name">
+            </column>
+        </property>
+        <many-to-one name="gender" class="Dictionary" fetch="select" lazy="false">
+			<column name="gender" length="1" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+        <property name="age" type="int">
+            <column name="age">
+            </column>
+        </property>
+         <property name="workAddress" type="string">
+            <column name="work_address" not-null="false" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" not-null="false" />
+        </property>
+        <property name="problems" type="string">
+            <column name="problems" not-null="false" />
+        </property>
+        <property name="reply" type="string">
+            <column name="reply" not-null="false" />
+        </property>
+        <property name="afterHandle" type="string">
+            <column name="after_handle" not-null="false" />
+        </property>
+		<property name="state" type="int">
+            <column name="state" length="1" not-null="true" default="1">
+            </column>
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time" not-null="false" />
+        </property>
+        <property name="addTime" type="java.util.Date">
+            <column name="add_time" not-null="true" />
+        </property>
+        <property name="prisonCode" type="java.lang.String">
+            <column name="prison_code" not-null="false" />
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+	</class>
+</hibernate-mapping>

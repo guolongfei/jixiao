@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="JX_User" table="JX_User">
+		<comment></comment>
+		<id name="id" column="id">
+			<generator class="uuid.hex" />
+		</id>		
+		<property name="username" type="java.lang.String">
+            <column name="username"/>
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="password"/>
+        </property>
+        <many-to-one name="jx_people" class="JX_People" fetch="select" lazy="false">
+            <column name="jx_people" not-null="false" />
+        </many-to-one>
+		<set name="roles" inverse="true" lazy="false">
+			<key>
+				<column name="user_id" not-null="false">
+					<comment></comment>
+				</column>
+			</key>
+			<one-to-many class="JX_UserRole" />
+		</set>
+		<property name="add_date" type="date">
+            <column name="add_date"/>
+        </property> 
+        <property name="state" type="int">
+            <column name="state" length="1" not-null="true"/>
+        </property>
+		<property name="online_state" type="int">
+            <column name="online_state" length="1" not-null="true"/>
+        </property>
+	</class>
+</hibernate-mapping>

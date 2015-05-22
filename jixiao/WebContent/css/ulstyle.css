@@ -1,0 +1,15 @@
+.sj_tb{
+	color: #018cea;
+	width: 100%;
+	height: 30px;
+	font-weight: bold;
+	font-size: 13px;
+}
+.sj_tb ul{
+	margin: 0;
+	padding: 0;
+}
+.sj_tb ul li{
+	width: 50%;
+	
+}

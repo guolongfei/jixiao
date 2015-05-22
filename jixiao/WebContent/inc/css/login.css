@@ -1,0 +1,211 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+    {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        font-size: 100%;
+        vertical-align: baseline;
+    }
+    html
+    {
+        line-height: 1;
+    }
+    ol, ul
+    {
+        list-style: none;
+    }
+    table
+    {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    caption, th, td
+    {
+        text-align: left;
+        font-weight: normal;
+        vertical-align: middle;
+    }
+    q, blockquote
+    {
+        quotes: none;
+    }
+    q:before, q:after, blockquote:before, blockquote:after
+    {
+        content: "";
+        content: none;
+    }
+    a img
+    {
+        border: none;
+    }
+    article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary
+    {
+        display: block;
+    }
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+    {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        font-size: 100%;
+        vertical-align: baseline;
+    }
+    html
+    {
+        line-height: 1;
+    }
+    ol, ul
+    {
+        list-style: none;
+    }
+    table
+    {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    caption, th, td
+    {
+        text-align: left;
+        font-weight: normal;
+        vertical-align: middle;
+    }
+    q, blockquote
+    {
+        quotes: none;
+    }
+    q:before, q:after, blockquote:before, blockquote:after
+    {
+        content: "";
+        content: none;
+    }
+    a img
+    {
+        border: none;
+    }
+    article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary
+    {
+        display: block;
+    }
+    html, body
+    {
+        height: 100%;
+    }
+    #content
+    {
+        clear: both;
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        margin-bottom: -24px;
+    }
+    #content #root_footer
+    {
+        height: 24px;
+    }
+    #footer
+    {
+        clear: both;
+        position: relative;
+        height: 24px;
+    }
+    body
+    {
+        background: url("../css/img/login/bg.png") repeat;
+    }
+    #content
+    {
+        width: 780px;
+        margin: 0 auto;
+    }
+    #content .logo
+    {
+        text-align: center;
+        margin: -80px 0 18px 0;
+    }
+    #content .texts
+    {
+        text-align: center;
+        margin-top: 12px;
+        color: #E9F5FD;
+        font-size: 29px;
+        font-weight: bold;
+        font-family: ºÚÌå;
+    }
+    #content .box
+    {
+        margin: 0 auto;
+        margin-top: 30px;
+        height: 66px;
+        width: 202px;
+        background: url("../css/img/login/login(1).png") no-repeat;
+        background-size:202px 66px;
+    }
+    #content .box input[type=text], #content .box input[type=password]
+    {
+        height: 22px;
+        border: none;
+        background: #EFF5F9;
+        margin: 1px 0 1px 38px;
+        width: 150px;
+        text-indent: 2px;
+        line-height: 22px;        
+    }
+    #content .btn_box
+    {
+        text-align: center;
+        margin-top: 18px;
+    }
+    #content .btn_box .certificate_login
+    {
+        width: 98px;
+        height: 38px;
+        border: none;
+        background: url("../css/img/button3(1).png") no-repeat;
+        background-size:98px 38px;
+    }
+    #content .btn_box .certificate_login:hover
+    {
+        background: url("../css/img/button2(1).png") no-repeat;
+        background-size:98px 38px;
+    }
+    #content .btn_box .fingerprint_login
+    {
+        width: 98px;
+        height: 38px;
+        border: none;
+        background: url("../css/img/button1(1).png") no-repeat;
+        background-size:98px 38px;
+    }
+    #content .btn_box .fingerprint_login:hover
+    {
+        background: url("../css/img/button4(1).png") no-repeat;
+        background-size:98px 38px;
+    }
+    #content .login_button
+    {
+        text-align: center;
+        margin-top: 30px;
+    }
+    #content .login_button .login_btn
+    {
+        width: 106px;
+        height: 106px;
+        border: none;
+        background: url("../css/img/login_btn2(1).png") no-repeat;
+        background-size:106px 106px;
+        cursor: pointer;
+    }
+    #content .login_button .login_btn:hover
+    {    	
+        background: url("../css/img/login_btn1(1).png") no-repeat;
+        background-size:106px 106px;
+    }
+    #footer
+    {
+        text-align: center;
+        color: #627990;
+        font-family: arial;
+        font-size: 12px;
+    }

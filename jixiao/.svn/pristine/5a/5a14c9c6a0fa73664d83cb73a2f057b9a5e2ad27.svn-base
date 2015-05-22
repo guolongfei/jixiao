@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="MessageReleases" table="MessageReleases">
+		<comment></comment>
+		<id name="id" column="id">
+			<generator class="uuid.hex" />
+		</id>
+		<property name="title" type="string">
+			<column name="title" not-null="false" />
+		</property>
+		<property name="summary" type="string">
+			<column name="summary" not-null="false" />
+		</property>
+		<property name="title_img_url" type="string">
+			<column name="title_img_url"  not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="content" type="string">
+			<column name="content"  not-null="false" length="4000">
+				<comment></comment>
+			</column>
+		</property>
+		<many-to-one name="messageType" class="MessageType" fetch="select" lazy="false">
+            <column name="MESSAGE_TYPE_ID" not-null="false" />
+        </many-to-one>
+		<property name="user_id" type="string">
+			<column name="user_id"  not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="add_time" type="java.util.Date">
+			<column name="add_time"  not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		
+		<property name="add_dept_id" type="string">
+			<column name="add_dept_id" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="top" type="int">
+			<column name="top" length="9" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="display_state" type="int">
+			<column name="display_state" not-null="false"/>
+		</property>
+		<property name="delete_state" type="int">
+			<column name="delete_state" not-null="false" />
+		</property>
+		<property name="rule_type" type="int">
+			<column name="rule_type" not-null="false" />
+		</property>
+		<property name="author" type="string">
+			<column name="author" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="messageFrom" type="string">
+			<column name="MESSAGEFROM" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

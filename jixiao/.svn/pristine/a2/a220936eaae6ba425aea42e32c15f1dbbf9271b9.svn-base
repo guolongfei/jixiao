@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire="byName"
+   xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- 每次创建一个新的action类都必须在这里定义，struts.xml中的action中的class写这里的id -->
+	<bean id="mainAction" class="com.hoyotech.prison.action.MainAction" scope="prototype"></bean>
+	<bean id="prisonerMainAction" class="com.hoyotech.prison.action.PrisonerMainAction" scope="prototype"></bean>
+	<bean id="carAction" class="com.hoyotech.prison.action.CarAction" scope="prototype"></bean>
+	<bean id="medicalAction" class="com.hoyotech.prison.action.MedicalAction" scope="prototype"></bean>
+	<bean id="prisonAction" class="com.hoyotech.prison.action.PrisonInfoAction" scope="prototype"></bean>
+	<bean id="prisonerAction" class="com.hoyotech.prison.action.PrisonerAction" scope="prototype"></bean>
+	<bean id="organizationAction" class="com.hoyotech.prison.action.OrganizationAction" scope="prototype"></bean>
+	<bean id="policeAction" class="com.hoyotech.prison.action.PoliceAction" scope="prototype"></bean>
+	<bean id="prisonDeviceAction" class="com.hoyotech.prison.action.PrisonDeviceAction" scope="prototype"></bean>
+	<bean id="civilianAction" class="com.hoyotech.prison.action.CivilianAction" scope="prototype"></bean>
+	<bean id="logisticAction" class="com.hoyotech.prison.action.LogisticAction" scope="prototype"></bean>
+	<bean id="detentionAreaAction" class="com.hoyotech.prison.action.DetentionAreaAction" scope="prototype"></bean>
+	<bean id="detentionInfoAction" class="com.hoyotech.prison.action.DetentionInfoAction" scope="prototype"></bean>
+	<bean id="prisonerHealthAction" class="com.hoyotech.prison.action.PrisonerHealthAction" scope="prototype"></bean>
+	<bean id="contrabandGoodsAction" class="com.hoyotech.prison.action.ContrabandGoodsAction" scope="prototype"></bean>
+	<bean id="prisonerGoodsAction" class="com.hoyotech.prison.action.PrisonerGoodsAction" scope="prototype"></bean>
+	<bean id="executeReturnAction" class="com.hoyotech.prison.action.ExecuteReturnAction" scope="prototype"></bean>
+	<bean id="sendExamineAction" class="com.hoyotech.prison.action.SendExamineAction" scope="prototype"></bean>
+	<bean id="stopDetainAction" class="com.hoyotech.prison.action.StopDetainAction" scope="prototype"></bean>
+	<bean id="outprisonAction" class="com.hoyotech.prison.action.OutprisonAction" scope="prototype"></bean>
+	<bean id="outproveAction" class="com.hoyotech.prison.action.OutprisonProveAction" scope="prototype"></bean>
+	<bean id="leaveExAction" class="com.hoyotech.prison.action.LeaveExpiresAction" scope="prototype"></bean>
+	<bean id="executionDetainAction" class="com.hoyotech.prison.action.ExecutionDetainAction" scope="prototype"></bean>
+	<bean id="useWeaponAction" class="com.hoyotech.prison.action.UseWeaponAction" scope="prototype"></bean>
+	<bean id="userAction" class="com.hoyotech.prison.action.UserAction" scope="prototype"></bean>
+	<bean id="roleAction" class="com.hoyotech.prison.action.RoleAction" scope="prototype"></bean>
+	<bean id="loginAction" class="com.hoyotech.prison.action.LoginAction" scope="prototype"></bean>
+	<bean id="askRegiAction" class="com.hoyotech.prison.action.AskRegistrationAction" scope="prototype"></bean>
+	<bean id="arraignAction" class="com.hoyotech.prison.action.ArraignAction" scope="prototype"></bean>
+	<bean id="appealDataPassAction" class="com.hoyotech.prison.action.AppealDataPassAction" scope="prototype"></bean>
+	<bean id="deathNoticeAction" class="com.hoyotech.prison.action.DeathNoticeAction" scope="prototype"></bean>
+	<bean id="removeDetainAction" class="com.hoyotech.prison.action.RemoveDetainAction" scope="prototype"></bean>
+	<bean id="handleSeparateAction" class="com.hoyotech.prison.action.HandleSeparateAction" scope="prototype"></bean>
+	<bean id="wrongDetainAction" class="com.hoyotech.prison.action.WrongDetainAction" scope="prototype"></bean>
+	<bean id="detainReturnAction" class="com.hoyotech.prison.action.DetainReturnAction" scope="prototype"></bean>
+	<bean id="refuseDetainAction" class="com.hoyotech.prison.action.RefuseDetainAction" scope="prototype"></bean>
+	<bean id="crimekeyPassAction" class="com.hoyotech.prison.action.CrimeKeyPassAction" scope="prototype"></bean>
+	<bean id="memconAction" class="com.hoyotech.prison.action.MemconAction" scope="prototype"></bean>
+	<bean id="userDetentionAction" class="com.hoyotech.prison.action.UserDetentionAction" scope="prototype"></bean>
+	<bean id="userDutyAction" class="com.hoyotech.prison.action.UserDutyAction" scope="prototype"></bean>
+	<bean id="alarmAction" class="com.hoyotech.prison.action.FailureAlarmAction" scope="prototype"></bean>
+	<bean id="outRegiAction" class="com.hoyotech.prison.action.OutRegister" scope="prototype"></bean>
+	<bean id="workUnitAction" class="com.hoyotech.prison.action.WorkUnitAction" scope="prototype"></bean>
+	<bean id="nameSearchAction" class="com.hoyotech.prison.action.NameSearchAction" scope="prototype"></bean>
+	<bean id="mapAction" class="com.hoyotech.prison.action.MapAction" scope="prototype"></bean>
+	<bean id="logAction" class="com.hoyotech.prison.action.LogAction" scope="prototype"></bean>
+	<bean id="countAction" class="com.hoyotech.prison.action.CountAction" scope="prototype"></bean>
+	<bean id="analysisAction" class="com.hoyotech.prison.action.AnalysisAction" scope="prototype"></bean>
+	<bean id="jiangchengAction" class="com.hoyotech.prison.action.JiangchengAction" scope="prototype"></bean>
+	<bean id="provinceAction" class="com.hoyotech.prison.action.ProvinceAction" scope="prototype"></bean>
+	<bean id="proAnalysisAction" class="com.hoyotech.prison.action.AnalysisStAction" scope="prototype"></bean>
+	<bean id="photoQueryAction" class="com.hoyotech.prison.action.PhotoQueryAction" scope="prototype"></bean>
+	<!-- 以下是台账的 -->
+	<bean id="interviewAction" class="com.hoyotech.prison.action.InterviewAction" scope="prototype"></bean>
+	<bean id="deepCrimeAction" class="com.hoyotech.prison.action.DeepCrimeAction" scope="prototype"></bean>
+	<bean id="doctorAction" class="com.hoyotech.prison.action.DoctorAction" scope="prototype"></bean>
+	<bean id="outDoctorAction" class="com.hoyotech.prison.action.OutDoctorAction" scope="prototype"></bean>
+	<bean id="strictManageAction" class="com.hoyotech.prison.action.StrictManageAction" scope="prototype"></bean>
+	<bean id="daiShouAction" class="com.hoyotech.prison.action.DaiShouAction" scope="prototype"></bean>
+	<bean id="emergencyAction" class="com.hoyotech.prison.action.EmergencyAction" scope="prototype"></bean>
+	<bean id="safeCheckAction" class="com.hoyotech.prison.action.SafeCheckAction" scope="prototype"></bean>
+	<bean id="inspectAction" class="com.hoyotech.prison.action.InspectAction" scope="prototype"></bean>
+	<bean id="educationAction" class="com.hoyotech.prison.action.EducationAction" scope="prototype"></bean>
+	<bean id="receptionAction" class="com.hoyotech.prison.action.ReceptionAction" scope="prototype"></bean>
+	<bean id="handOverAction" class="com.hoyotech.prison.action.HandOverAction" scope="prototype"></bean>
+	<bean id="meetingRecordAction" class="com.hoyotech.prison.action.MeetingRecordAction" scope="prototype"></bean>
+	<bean id="analysisMeetingAction" class="com.hoyotech.prison.action.AnalysisMeetingAction" scope="prototype"></bean>
+	<bean id="societyOpenAction" class="com.hoyotech.prison.action.SocietyOpenAction" scope="prototype"></bean>
+	<bean id="handleConflictAction" class="com.hoyotech.prison.action.HandleConflictAction" scope="prototype"></bean>
+	<bean id="talkEducationAction" class="com.hoyotech.prison.action.TalkEducationAction" scope="prototype"></bean>
+	<bean id="patrolRecordAction" class="com.hoyotech.prison.action.PatrolRecordAction" scope="prototype"></bean>
+	<bean id="riskAssessAction" class="com.hoyotech.prison.action.RiskAssessAction" scope="prototype"></bean>
+	<bean id="goodItemAction" class="com.hoyotech.prison.action.GoodItemAction" scope="prototype"></bean>
+	<bean id="medicalTreatmentAction" class="com.hoyotech.prison.action.MedicalTreatmentAction" scope="prototype"></bean>	
+  <!--	卢志明2015年1月19日      -->
+	<bean id="MessageReleasesAction" class="com.hoyotech.prison.action.MessageReleasesAction" scope="prototype"></bean>
+	<bean id="AchievementAction" class="com.hoyotech.prison.action.AchievementAction" scope="prototype"></bean>
+	<bean id="InexepensiveTextAction" class="com.hoyotech.prison.action.InexepensiveTextAction" scope="prototype"></bean>
+	<bean id="SpecialScoreAction" class="com.hoyotech.prison.action.SpecialScoreAction" scope="prototype"></bean>
+	<!-- 闵高 2015年1月19日 -->
+	<bean id="HomePageAction" class="com.hoyotech.prison.action.HomePageAction" scope="prototype"></bean>
+	<bean id="OnLine_Test" class="com.hoyotech.prison.action.OnLine_Test" scope="prototype"></bean>
+	<bean id="QuarterAction" class="com.hoyotech.prison.action.QuarterAction"></bean>
+	<bean id="EmployeeAction" class="com.hoyotech.prison.action.EmployeeAction" scope="prototype"></bean>
+	<!-- 邵云波 2015年1月22日 -->
+	<bean id="RecordAction" class="com.hoyotech.prison.action.RecordAction" scope="prototype"></bean>
+	
+	<!--刘泉2015.01.25-->
+	<bean id="JX_DepartmentAction" class="com.hoyotech.prison.action.JX_DepartmentAction" scope="prototype"></bean>
+	<bean id="JX_UserAction" class="com.hoyotech.prison.action.JX_UserAction" scope="prototype"></bean>
+	<bean id="JX_RoleAction" class="com.hoyotech.prison.action.JX_RoleAction" scope="prototype"></bean>
+
+    <!-- 绩效管理 -->
+	<bean id="PerformanceAction" class="com.hoyotech.prison.action.PerformanceAction" scope="prototype"></bean>
+	
+	<!--卢志明2015年4月8日      -->
+	<bean id="RoomManagerAction" class="com.hoyotech.prison.action.RoomManagerAction" scope="prototype"></bean>
+	
+	
+	<!--王辉2015-4-9      -->
+	<bean id="MobileAction" class="com.hoyotech.prison.action.MobileAction" scope="prototype"></bean>
+	<bean id="MobileRoomManageAction" class="com.hoyotech.prison.action.MobileRoomManageAction" scope="prototype"></bean>
+</beans>

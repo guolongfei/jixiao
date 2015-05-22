@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="UserDuty" table="user_duty">
+		<comment></comment>
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+		<many-to-one name="user" class="User" fetch="select" lazy="false">
+           <column name="user_id"/>
+        </many-to-one>
+        <property name="startTime" type="java.util.Date">
+            <column name="start_time" />
+        </property>
+        <property name="endTime" type="java.util.Date">
+            <column name="end_time" />
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="255" default=""/>
+        </property>
+   		<property name="passWork" type="int">
+            <column name="pass_work" length="1" default="0" />
+        </property>
+		<many-to-one name="passWorker" class="User" fetch="select" lazy="false">
+           <column name="pass_Worker"/>
+        </many-to-one>
+		<property name="state" type="int">
+            <column name="state" length="1" default="1" />
+        </property>
+        <property name="addTime" type="java.util.Date">
+            <column name="add_time" />
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time" />
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+	</class>
+</hibernate-mapping>
+

@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="FailureAlarm" table="failure_alarm">
+		<comment></comment>
+		<id name="id" column="id">
+			<generator class="uuid.hex" />
+		</id>
+		<property name="eventId" type="int">
+			<column name="event_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="alarmTime" type="date">
+			<column name="alarm_time" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="alarmDevName" type="string">
+			<column name="alarm_devName" length="150">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="alarmType" type="int">
+			<column name="alarm_type">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="alarmDevType" type="int">
+			<column name="alarm_devType">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="alarmState" type="int">
+			<column name="alarm_state">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="alarmDevId" type="int">
+			<column name="alarm_devId">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="alarmJpgPath1" type="string">
+			<column name="alarm_jpgPath1" length="255">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="alarmJpgPath2" type="string">
+			<column name="alarm_jpgPath2" length="255">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="alarmMessage" type="string">
+			<column name="alarm_message" length="255">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="alarmChannelId" type="int">
+			<column name="alarm_channel_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="alarmLevel" type="int">
+			<column name="alarm_level">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="alarmPosXY" type="string">
+			<column name="alarm_posXY" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="alarmAuther" type="string">
+			<column name="alarm_auther" length="100">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="alarmServerId" type="int">
+			<column name="alarm_server_id">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="dealPerson" type="string">
+			<column name="deal_person" length="100">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="dealTime" type="date">
+			<column name="deal_time" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="dealResult" type="string">
+			<column name="deal_result" length="200">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="reporting" type="int">
+			<column name="reporting">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="reportingOrgId" type="int">
+			<column name="reportingOrgId">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="reportingAuther" type="string">
+			<column name="reporting_auther" length="100">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="reportingTime" type="date">
+			<column name="reporting_time" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="reportingMessage" type="string">
+			<column name="reporting_message" length="250">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="alarmObject" type="string">
+			<column name="alarmObject" length="250">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="reserve1" type="string">
+			<column name="reserve1" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="reserve2" type="string">
+			<column name="reserve2" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="reserve3" type="string">
+			<column name="reserve3" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isSync" type="int">
+			<column name="is_sync" length="1" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="Prisoner" table="prisoner">
+		<comment></comment>
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+		<property name="noYear" type="string">
+            <column name="no_year" length="50" />
+        </property>
+        <property name="noNumber" type="string">
+            <column name="no_number" length="50" />
+        </property>
+         <property name="fileNumber" type="string">
+            <column name="file_number" length="100" />
+        </property>
+        <many-to-one name="prison" class="PrisonInfo" fetch="select" lazy="false">
+            <column name="prison_id" not-null="false" />
+        </many-to-one>
+		<property name="prisonerCode" type="string">
+			<column name="prisoner_code" length="21" not-null="true">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="name" type="string">
+			<column name="name" length="60" not-null="true">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="nickName" type="string">
+			<column name="nick_name" length="60" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<many-to-one name="gender" class="Dictionary" fetch="select" lazy="false">
+			<column name="gender" length="1" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="birthday" type="date">
+			<column name="birthday" length="10" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="age" type="string">
+            <column name="age" length="50" />
+        </property>
+		<many-to-one name="psoples" class="Peoples" fetch="select" lazy="false">
+			<column name="psoples" length="2" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="height" type="int">
+			<column name="height" length="3" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="footLength" type="int">
+			<column name="foot_length" length="3" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<many-to-one name="documeType" class="Document" fetch="select" lazy="false">
+			<column name="docume_type" length="3" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="documeNum" type="string">
+			<column name="docume_num" length="30" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<many-to-one name="marryStatus" class="Dictionary" fetch="select" lazy="false">
+			<column name="marry_status" length="2" not-null="true">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="nationality" class="Nationality" fetch="select" lazy="false">
+			<column name="nationality" length="3" not-null="true">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="origionPlace" class="Dictionary" fetch="select" lazy="false">
+			<column name="origion_place" length="6" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="accountLocation" class="Dictionary" fetch="select" lazy="false">
+			<column name="account_location" length="6" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="detailedAccount" type="string">
+			<column name="detailed_account" length="80" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<many-to-one name="address" class="Dictionary" fetch="select" lazy="false">
+			<column name="address" length="6" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="detailedAddress" type="string">
+			<column name="detailed_address" length="80" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="workPlace" type="string">
+			<column name="work_place" length="80" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<many-to-one name="educationLevel" class="Dictionary" fetch="select" lazy="false">
+			<column name="education_level" length="2" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="carer" class="Career" fetch="select" lazy="false">
+			<column name="carer" length="4" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="status" class="Dictionary" fetch="select" lazy="false">
+			<column name="status" length="2" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="specialStatus" class="Dictionary" fetch="select" lazy="false">
+			<column name="special_status" length="2" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="dateInprison" type="date">
+			<column name="date_inprison" length="10" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<many-to-one name="imprisonReason" class="Dictionary" fetch="select" lazy="false">
+			<column name="imprison_reason" length="2" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="handleType" class="Dictionary" fetch="select" lazy="false">
+			<column name="handle_type" length="1" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		 <many-to-one name="handleCases" class="WorkUnit" fetch="select" lazy="false">
+            <column name="handle_cases" not-null="false" />
+        </many-to-one>
+		<property name="detenDocuNum" type="string">
+			<column name="detenDocu_num" length="50" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<many-to-one name="crime" class="Dictionary" fetch="select" lazy="false">
+			<column name="crime" length="68" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="sammary" type="string">
+			<column name="sammary" length="1000" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<many-to-one name="voucher" class="Dictionary" fetch="select" lazy="false">
+			<column name="voucher" length="1" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="detenPeriod" type="int">
+			<column name="deten_period" length="3" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<many-to-one name="dangerLevel" class="Dictionary" fetch="select" lazy="false">
+			<column name="danger_level" length="1" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="dateOutprison" type="date">
+			<column name="date_outprison" length="10" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="realityOutTime" type="date">
+			<column name="reality_outTime" length="10" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<many-to-one name="outprisonReson" class="Dictionary" fetch="select" lazy="false">
+			<column name="outprison_reson" length="2" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="releaseDocuNum" type="string">
+			<column name="releaseDocu_num" length="50" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<many-to-one name="detentionInfo" class="DetentionInfo" fetch="select" lazy="false">
+			<column name="detention_id">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="managerClasses" class="Dictionary" fetch="select" lazy="false">
+			<column name="manager_classes" length="1" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="dateCheck" class="Dictionary" fetch="select" lazy="false">
+			<column name="date_check" length="1" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="datagatherName" type="string">
+			<column name="datagather_name" length="60" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="datacheckerName" type="string">
+			<column name="datachecker_name" length="60" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="remark" type="string">
+			<column name="remark" length="200" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="xLetters" type="string">
+			<column name="x_letters" length="10" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="state" type="int">
+            <column name="state" length="1" not-null="true" default="1">
+            </column>
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time" not-null="false" />
+        </property>
+        <property name="addTime" type="java.util.Date">
+            <column name="add_time" not-null="true" />
+        </property>
+        <property name="prisonCode" type="java.lang.String">
+            <column name="prison_code" not-null="false" />
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+	</class>
+</hibernate-mapping>

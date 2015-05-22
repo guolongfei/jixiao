@@ -1,0 +1,75 @@
+@import "compass";
+@import "compass/reset";
+
+#content{
+	border-top-left-radius: 0px;
+}
+.form_header{
+	background:#5E6F80;
+	height:65px;
+	line-height:65px;
+	h1{
+		width:800px;
+		margin:0px auto;
+		font-size:28px;
+		color:#f2f2f2;
+		font-family: 黑体;
+	}
+}
+#breadcrumb{
+	width:790px;
+	margin:0px auto;
+	background:#F8F8F8;
+	height:48px;
+	line-height:36px;
+	border:1px solid #ddd;
+	border-top:none;
+	a{
+		font-size:13px;
+		i{
+			margin-top: 0;
+		}
+	}
+	a.current{
+		font-weight: normal;
+	}
+}
+.widget-box{
+	width:800px;
+	margin:0 auto;
+	border:1px solid #ddd;
+	border-top:none;
+	padding-top:20px;
+}
+.form-actions{
+	background:#F8F8F8;
+	text-align: center;
+}
+.form_save_btn{
+	background:url("../css/img/form_save_btn1.png")  no-repeat;
+	width:129px;
+	height:35px;
+	border:none;
+	&:hover{
+		background:url("../css/img/form_save_btn2.png")  no-repeat;
+	}
+}
+.form-row{
+	.detail{
+		width:100%;
+	}
+}
+.form-row .detail span{
+	width:255px;
+}
+
+
+
+
+
+
+
+
+
+
+

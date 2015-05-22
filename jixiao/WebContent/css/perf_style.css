@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+body{
+	/*border: 1px solid #CCFFFF;*/
+	/*margin: 0 auto;*/
+	text-align: center;
+}
+.left_td{
+	font-family: 微软雅黑;
+	font-weight: bolder;
+	font-size: 1.0em;
+	background-color: #2D92EA;
+	width: 15%;
+}
+.right_td{
+	font-family: 微软雅黑;
+	font-weight: bolder;
+	font-size: 0.9em;
+}

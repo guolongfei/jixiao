@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="RolePermission" table="rolePermission">
+		<comment></comment>
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+		<property name="roleId" type="string">
+			<column name="role_id" length="50" not-null="true" />
+		</property>
+		<many-to-one name="perId" class="Permission" fetch="select" lazy="false">
+			<column name="per_id" length="2" not-null="false" />
+		</many-to-one>
+		<property name="isSync" type="int">
+			<column name="is_sync" length="1" />
+		</property>
+	</class>
+</hibernate-mapping>
+

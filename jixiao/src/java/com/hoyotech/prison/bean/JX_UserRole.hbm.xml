@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="JX_UserRole" table="JX_UserRole">
+		<comment></comment>
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+		<property name="user_Id" type="string">
+           <column name="user_id" length="50" not-null="false">
+                <comment></comment>
+            </column>
+        </property>
+         <many-to-one name="jx_role" class="JX_Role" fetch="select" lazy="false">
+            <column name="jx_role" not-null="false" />
+        </many-to-one>		     
+	</class>
+</hibernate-mapping>
+

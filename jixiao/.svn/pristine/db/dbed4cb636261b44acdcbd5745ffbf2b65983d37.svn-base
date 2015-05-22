@@ -1,0 +1,119 @@
+<%@page import="java.util.Iterator"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>  
+<%
+	String power=(String)session.getAttribute("key");
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>湖北公安监管信息综合应用平台</title>
+<jsp:include page="../jscss.jsp"></jsp:include>
+</head>
+<body>
+	<div id="content">
+		<div id="content-header">
+			<h1>用户管理</h1>
+			<div class="btn-group" style="width: auto;">
+				
+				<a id="delbtn" title="" href="#" class="btn btn-danger">删除</a>
+				
+				<a title="" href="jx_user_bs_gotoUserEdit.action?userId=<s:property value="jx_User.id"/>" class="btn btn-primary">修改</a>
+				
+				<a id="delbtn" title="" href="jx_user_bs_gotoUserRole.action?userId=<s:property value="jx_User.id"/>" class="btn btn-danger">角色</a>
+				
+			</div>
+		</div>
+		<div id="breadcrumb">
+			<a class="tip-bottom" href="user_select.action" title=""  data-original-title="回到主页"><i class="icon-home"></i> 主页</a>
+			<a class="current" href="#">用户信息</a>
+		</div>
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="widget-box">
+                         <div class="widget-title">
+                             <span class="icon"><i class="icon-align-justify"></i></span>
+                             <h5>用户详细信息</h5>
+                         </div>
+                         <div class="widget-content  nopadding">
+							<div class="detail_row">
+								<div class="detail_item">
+									<label>登录账号:</label>
+									<div>
+										<s:property value="jx_User.username"></s:property>
+									</div>
+								</div>
+							</div>
+							<div class="detail_row">
+								<div class="detail_item">
+									<label>用户姓名:</label>
+									<div>
+										<s:property value="jx_User.jx_people.name"></s:property>
+									</div>
+								</div>
+								
+							</div>							
+							<div class="detail_row">
+								<div class="detail_item">
+									<label>职位:</label>
+									<div>
+										<s:property value="jx_User.jx_people.posttable.postName"></s:property>
+									</div>
+								</div>								
+							</div>
+							<div class="detail_row">
+								<div class="detail_item">
+									<label>部门:</label>
+									<div>
+										<s:property value="jx_User.jx_people.jx_department.name"></s:property>
+									</div>
+								</div>								
+							</div>							
+							<div class="detail_row">							
+								<div class="detail_item">
+									<label>状态:</label>
+									<div>
+										<s:if test="jx_User.state==1">可用</s:if>
+										<s:else>禁用</s:else>
+									</div>
+								</div>
+							</div>
+							<div class="detail_row">
+								<div class="detail_item">
+									<label>角色:</label>
+									<div>
+									<s:iterator value="jx_User.roles">
+										<s:property value="jx_role.name"/>
+									</s:iterator>
+									</div>
+								</div>
+							</div>
+							<div class="form-actions nomargin">
+								<a class="btn btn-primary" href="jx_user_bs_gotoUserListPage.action">返回</a>
+							</div>
+						</div>
+					</div>						
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span12" id="footer">
+					 
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+$(function(){
+	$("#delbtn").click(function(){
+		if(confirm("你确定要删除该信息吗？")){
+			window.location="jx_user_bs_detele.action?userId=<s:property value="jx_User.id"/>&peopleId=<s:property value="jx_User.jx_people.id"/>";
+		}
+	});
+	
+});
+</script>
+</body>
+</html>

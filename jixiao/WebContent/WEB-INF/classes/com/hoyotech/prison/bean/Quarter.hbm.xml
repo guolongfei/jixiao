@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="Quarter" table="QUARTER_TIME">
+		<comment></comment>
+		<id name="quarterId" column="quarterId">
+			<generator class="uuid" />
+		</id>
+		<property name="year" type="string">
+			<column name="year" />
+		</property>
+		<property name="quarter" type="string">
+			<column name="quarter" length="4000"/>
+		</property>
+		<property name="startTime" type="string">
+			<column name="startTime" />
+		</property>
+		<property name="endTime" type="string">
+			<column name="endTime" />
+		</property>
+	</class>
+</hibernate-mapping>

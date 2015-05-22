@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="Area" table="area">
+        <id name="id" type="integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one 
+	        name="area" 
+	        class="Area" 
+	        fetch="select" 
+	        lazy="false"
+	        column="parent_id" 
+	        insert="false"
+	        update="false"
+	        not-null="false">
+        </many-to-one>
+        <property name="regionCode" type="string">
+            <column name="region_code" length="50" />
+        </property>
+        <property name="regionName" type="string">
+            <column name="region_name" length="50" />
+        </property>
+        <property name="path" type="string">
+            <column name="path" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

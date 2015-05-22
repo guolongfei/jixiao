@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="GradeTypeTable" table="GRADE_TYPE_TABLE">
+        <comment></comment>
+		<id name="gradeTypeId" column="grade_Type_Id">
+		</id>
+        <property name="gradeTypeName" type="string">
+            <column name="grade_Type_Name" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

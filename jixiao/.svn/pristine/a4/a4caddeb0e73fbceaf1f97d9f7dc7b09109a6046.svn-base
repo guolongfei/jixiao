@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="SendExamine" table="send_examine">
+		<comment></comment>
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+        <many-to-one name="prisoner" class="Prisoner" fetch="select" lazy="false">
+			<column name="prisoner" not-null="false">
+			</column>
+		</many-to-one>
+		 <property name="sender" type="string">
+            <column name="sender" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="senderNumber" type="string">
+            <column name="sender_number" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="senderPhone" type="string">
+            <column name="sender_phone" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="sendReason" type="string">
+            <column name="send_reason" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="sendDate" type="date">
+            <column name="send_date" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="leader" type="string">
+            <column name="leader" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="leaderExamine" type="string">
+            <column name="leader_examine" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="leaderExamineDate" type="date">
+            <column name="leader_examine_date" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="examine" type="string">
+            <column name="examine" length="50" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="remark" type="string">
+            <column name="remark" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="state" type="int">
+            <column name="state" length="1" not-null="true" default="1">
+            </column>
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time" not-null="false" />
+        </property>
+        <property name="addTime" type="java.util.Date">
+            <column name="add_time" not-null="true" />
+        </property>
+        <property name="prisonCode" type="java.lang.String">
+            <column name="prison_code" not-null="false" />
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+	</class>
+</hibernate-mapping>

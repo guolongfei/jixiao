@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="Police" table="police">
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+        <property name="name" type="java.lang.String">
+            <column name="name" not-null="true" />
+        </property>
+         <property name="number" type="java.lang.String">
+            <column name="&quot;NUMBER&quot;"/>
+        </property>
+        <property name="policeNumber" type="java.lang.String">
+            <column name="police_number"/>
+        </property>
+        <property name="birthday" type="date">
+            <column name="birthday"/>
+        </property>
+        <property name="IDNumber" type="java.lang.String">
+            <column name="id_number" length="50"/>
+        </property>
+        <many-to-one name="gender" class="Dictionary" fetch="select" lazy="false">
+            <column name="gender"/>
+        </many-to-one>
+        <many-to-one name="peoples" class="Peoples" fetch="select" lazy="false">
+            <column name="peoples"/>
+        </many-to-one>
+        <many-to-one name="politicalStatus" class="Dictionary" fetch="select" lazy="false">
+            <column name="political_status"/>
+        </many-to-one>
+        <many-to-one name="educational" class="Dictionary" fetch="select" lazy="false">
+            <column name="educational"/>
+        </many-to-one>
+        <many-to-one name="post" class="Dictionary" fetch="select" lazy="false">
+            <column name="post"/>
+        </many-to-one>
+        <many-to-one name="originPlace" class="Dictionary" fetch="select" lazy="false">
+            <column name="origin_place"/>
+        </many-to-one>
+        <many-to-one name="status" class="Dictionary" fetch="select" lazy="false">
+            <column name="status"/>
+        </many-to-one>
+        <property name="policeRank" type="java.lang.String">
+            <column name="police_rank"/>
+        </property>
+        <property name="adminLevel" type="java.lang.String">
+            <column name="admin_evel"/>
+        </property>
+        <property name="techTitle" type="java.lang.String">
+            <column name="tech_title"/>
+        </property>
+        <property name="workPeriod" type="java.lang.String">
+            <column name="work_period"/>
+        </property>
+        <property name="partyTime" type="date">
+            <column name="party_time"/>
+        </property>
+        <property name="state" type="java.lang.Integer">
+            <column name="state"/>
+        </property>
+        <property name="letters" type="string">
+			<column name="letters" length="10" not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time"/>
+        </property>
+        <property name="addTime" type="java.util.Date">
+            <column name="add_time"/>
+        </property>
+        <property name="prisonCode" type="java.lang.String">
+            <column name="prison_code"/>
+        </property>
+        <property name="isSync" type="java.lang.Integer">
+            <column name="is_sync"/>
+        </property>
+    </class>
+</hibernate-mapping>

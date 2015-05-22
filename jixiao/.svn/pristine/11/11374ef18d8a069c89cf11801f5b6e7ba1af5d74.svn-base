@@ -1,0 +1,180 @@
+body 
+{
+    text-align:center;
+    font-size:16px;
+    font-family:Î¢ÈíÑÅºÚ;
+}
+
+.top
+{
+    border:1px #E6B68B solid;
+    width:1000px;
+    margin:20px auto;
+    text-align:left; 
+    height:30px;
+}
+
+.top span
+{
+    margin:20px;    
+}
+
+.top span button
+{
+    width:80px;
+    height:25px;
+}
+
+.serchContent
+{
+    width:1000px;
+    margin:20px auto; 
+    border:1px #E6B68B solid
+}
+
+.serchContent input
+{
+    height:20px;
+}
+
+.serchContent  table
+{
+    text-align:left;
+}
+
+.serchContent table td
+{
+    width:300px;    
+}
+
+
+.content
+{
+        width:500px;
+        float:left;
+}
+
+.content div
+{
+    background:#EEEEEE;
+    height:40px;
+}
+
+.information
+{
+    width:120px;
+    cursor:pointer;
+    float:left;
+    display:block;
+    height:30px;
+    padding-top:10px;
+    background:#EEEEEE;
+}
+
+.informationClick
+{
+    width:120px;
+    cursor:pointer;
+    float:left;
+    display:block;
+    height:30px;
+    padding-top:10px;
+    background:#C9C9C9;
+}
+
+ .contentTable
+{
+    width:100%;
+    border-collapse:collapse;
+    border:1px #666666 solid;
+}
+
+.contentTable td
+{
+    width:150px;
+    border:1px #666666 solid;
+    height:30px;
+}
+
+.contentTable1
+{
+    width:100%;
+    border-collapse:collapse;
+    border:1px #666666 solid;
+}
+
+.contentTable1 td
+{
+    width:100px;
+    border:1px #666666 solid;
+    height:30px;
+}
+
+.content .title
+{
+    width:380px;
+}
+
+.photo
+{
+    width:490px; 
+    float:right;
+}
+
+.photo table
+{
+    width:100%;
+}
+
+.photo table td
+{
+    width:110px;
+    height:150px;
+    border:2px #666666 solid;
+}
+
+
+.photo img
+{
+    width:110px;
+    height:150px;
+    cursor:pointer;
+}
+
+#page-info
+{
+	margin-top:100px;
+	height:40px;
+	width:600px;
+	z-index:9999;
+	
+}
+
+.pagination nomargin
+{
+	background:red;
+	height:40px;
+	width:600px;
+}
+
+
+.pagelist
+{
+	width:1000px;
+	height:40px;
+	clear:left;
+	text-align:center;
+	margin-top:100px;
+}
+
+.pagelist ul
+{
+	list-style:none;
+}
+
+.pagelist ul li
+{
+	float:left;
+	width:76px;
+}
+

@@ -1,0 +1,82 @@
+@import "compass";
+@import "compass/reset";
+@import "compass/layout";
+@include global-reset;
+@include sticky-footer(24px, "#content", "#root_footer", "#footer");
+body{
+	background:url('../css/img/login/bg.png') repeat;
+}
+#content{
+	width:780px;
+	margin: 0 auto;
+	.logo{
+  		text-align:center;
+		margin:-80px 0 18px 0;
+	}
+	.texts{
+		text-align:center;
+		margin-top:12px;
+		color:#E9F5FD;
+		font-size:29px;
+		font-weight:bold;
+		font-family:黑体;
+	}
+	.box{
+		margin:0 auto;
+  		margin-top:70px;
+		height:101px;
+		width:305px;
+		background:url('../css/img/login/login.png') no-repeat;
+		input[type=text],input[type=password]{
+			height:39px;
+			border:none;
+			background:#EFF5F9;
+			margin:1px 0 1px 56px;
+			width:236px;
+			text-indent:10px;
+			line-height:39px;
+		}
+	}
+	.btn_box{
+		text-align:center;
+		margin-top:18px;
+		.certificate_login{
+			width:146px;
+			height:43px;
+			border:none;
+			background:url('../css/img/button3.png') no-repeat;
+			&:hover{
+				background:url('../css/img/button2.png') no-repeat;
+			}
+		}
+		.fingerprint_login{
+			width:146px;
+			height:43px;
+			border:none;
+			background:url('../css/img/button1.png') no-repeat;
+			&:hover{
+				background:url('../css/img/button4.png') no-repeat;
+			}
+		}
+	}
+	.login_button{
+		text-align:center;
+		margin-top:30px;
+		.login_btn{
+			width:166px;
+			height:166px;
+			border:none;
+			background:url('../css/img/login_btn2.png') no-repeat;
+			cursor:pointer;
+			&:hover{
+				background:url('../css/img/login_btn1.png') no-repeat;
+			}
+		}
+	}
+}
+#footer{
+  text-align:center;
+  color:#627990;
+  font-family:arial;
+  font-size:12px;
+}

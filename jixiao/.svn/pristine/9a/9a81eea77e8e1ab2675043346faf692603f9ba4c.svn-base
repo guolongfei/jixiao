@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="PrisonerContrabandGoods" table="prisoner_contraband_goods">
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+		<property name="noYear" type="string">
+            <column name="no_year" length="50" />
+        </property>
+        <property name="noNumber" type="string">
+            <column name="no_number" length="50" />
+        </property>
+        <many-to-one name="prisoner" class="Prisoner" fetch="select" lazy="false">
+            <column name="prisoner_id" />
+        </many-to-one>
+        <many-to-one name="handlePolice" class="Police" fetch="select" lazy="false">
+            <column name="handle_police" not-null="false" />
+        </many-to-one>
+        <property name="handleDate" type="date">
+            <column name="handle_date" length="23" />
+        </property>
+        <property name="receivesUnitAgent" type="string">
+            <column name="receives_unit_agent" length="50" />
+        </property>
+        <property name="receivesDate" type="date">
+            <column name="receives_date" />
+        </property>
+        <many-to-one name="prisonLeader" class="Police" fetch="select" lazy="false">
+            <column name="prison_leader" not-null="false" />
+        </many-to-one>
+        <property name="prisonLeaderDate" type="date">
+            <column name="prison_leader_date" />
+        </property>
+        <property name="state" type="int">
+            <column name="state" not-null="true" />
+        </property>
+        <property name="addTime" type="date">
+            <column name="add_time" not-null="true" />
+        </property>
+        <property name="updateTime" type="date">
+            <column name="update_time" />
+        </property>
+        <property name="prisonCode" type="string">
+            <column name="prison_code" />
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

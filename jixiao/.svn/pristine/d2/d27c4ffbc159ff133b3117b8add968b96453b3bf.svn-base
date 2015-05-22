@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="UseWeapon" table="useWeapon">
+		<comment></comment>
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+		<property name="weaponName" type="string">
+            <column name="weaponName" length="50">
+                <comment></comment>
+            </column>
+        </property>
+       <property name="startTime" type="date">
+            <column name="start_time">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="endTime" type="date">
+            <column name="end_time" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="useReason" type="string">
+            <column name="useReason" length="255">
+                <comment></comment>
+            </column>
+        </property>
+       <property name="delayReason" type="string">
+            <column name="delay_reason" length="255">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="dayNum" type="string">
+            <column name="day_number" length="50">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="removeTime" type="date">
+            <column name="remove_time">
+                <comment></comment>
+            </column>
+        </property>
+        <many-to-one name="prisoner" class="Prisoner" fetch="select" lazy="false">
+			<column name="prisoner" length="2" not-null="false">
+				<comment></comment>
+			</column>
+		</many-to-one>
+		<property name="examine" type="string">
+            <column name="examine" length="10" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="state" type="int">
+            <column name="state" length="1" not-null="true" default="1">
+            </column>
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time" not-null="false" />
+        </property>
+        <property name="addTime" type="java.util.Date">
+            <column name="add_time" not-null="true" />
+        </property>
+        <property name="prisonCode" type="java.lang.String">
+            <column name="prison_code" not-null="false" />
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+	</class>
+</hibernate-mapping>

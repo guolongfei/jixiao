@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="PrisonerImage" table="prisoner_image">
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+        <many-to-one name="prisoner" class="Prisoner" fetch="select" lazy="false">
+            <column name="prisoner_id" />
+        </many-to-one>
+        <property name="fileName" type="string">
+            <column name="file_name" length="50" />
+        </property>
+        <property name="fileNameLeft" type="string">
+            <column name="file_name_left" length="50" />
+        </property>
+        <property name="fileNameRight" type="string">
+            <column name="file_name_right" length="50" />
+        </property>
+        <property name="fileSize" type="int">
+            <column name="file_Size" length="50" />
+        </property>
+        <property name="fileType" type="string">
+            <column name="file_type" length="50" />
+        </property>
+        <property name="fileDate" type="image">
+            <column name="file_date"/>
+        </property>
+        <property name="fileLeftDate" type="image">
+            <column name="file_left_date"/>
+        </property>
+        <property name="fileRightDate" type="image">
+            <column name="file_right_date"/>
+        </property>
+        <property name="state" type="int">
+            <column name="state" not-null="true"/>
+        </property>
+        <property name="addTime" type="java.util.Date">
+            <column name="add_time" not-null="true" />
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

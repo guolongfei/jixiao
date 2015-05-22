@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="Achievement" table="Achievement">
+		<comment></comment>
+		<id name="achievement_id" column="achievement_id">
+			<generator class="uuid.hex" />
+		</id>
+		<many-to-one name="u" class="JX_User" fetch="select" lazy="false">
+            <column name="achievement_userId" not-null="false" />
+        </many-to-one>
+		<property name="achievement_content" type="string">
+			<column name="achievement_content" not-null="false" />
+		</property>
+		<property name="achievement_recordTime" type="java.util.Date">
+			<column name="achievement_recordTime"  not-null="false">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

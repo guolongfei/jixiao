@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="RecordTable" table="RECORD_TABLE">
+        <comment></comment>
+		<id name="recordId" column="record_Id">
+   			<generator class="uuid.hex" />
+		</id>
+		
+		<many-to-one name="peopleId" class="JX_People" fetch="select" lazy="false" not-found="ignore">
+            <column name="PEOPLE_ID" not-null="false" />
+        </many-to-one>
+        
+        <property name="recordDate" type="date">
+            <column name="record_Date" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="depId" type="int">
+            <column name="dep_Id" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="startTime" type="date">
+            <column name="start_Time" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="endTime" type="date">
+            <column name="end_Time" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="recordState" type="string">
+            <column name="record_State" length="50" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="dateType" type="string">
+            <column name="date_Type" length="50" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

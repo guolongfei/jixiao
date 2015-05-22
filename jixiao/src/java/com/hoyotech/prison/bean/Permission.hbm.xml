@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="Permission" table="permission">
+		<comment></comment>
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+		<property name="keyName" type="string">
+			<column name="key_name" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="permission" type="string">
+			<column name="permission" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="moduleId" type="string">
+			<column name="module_id" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="moduleName" type="string">
+			<column name="module_name" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="explain" type="string">
+			<column name="explain" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="organizeType" type="string">
+			<column name="organize_type" length="50">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="path" type="string">
+			<column name="path" length="255">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="url" type="string">
+			<column name="url" length="500">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="isSync" type="int">
+			<column name="is_sync" length="1" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="BasicSetUp" table="BASIC_SETUP">
+		<comment></comment>
+		<id name="id" column="ID">
+			<generator class="uuid" />
+		</id>
+		<property name="setup_type" type="java.lang.Integer">
+			<column name="SETUP_TYPE" />
+		</property>
+		<property name="setup_title" type="string">
+			<column name="SETUP_TITLE" length="4000"/>
+		</property>
+		<property name="ischain" type="java.lang.Integer">
+			<column name="ISCHAIN" />
+		</property>
+		<property name="istop" type="java.lang.Integer">
+			<column name="ISTOP" />
+		</property>
+		<property name="chain_adress" type="string">
+			<column name="CHAIN_ADRESS" />
+		</property>
+		<property name="addtime" type="date">
+			<column name="ADDTIME" />
+		</property>
+	</class>
+</hibernate-mapping>

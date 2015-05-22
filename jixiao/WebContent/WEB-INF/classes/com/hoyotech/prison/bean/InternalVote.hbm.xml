@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+    <class name="InternalVote" table="INTERNAL_VOTE">
+        <comment></comment>
+		<id name="internalVoteId" column="INTERNAL_VOTE_ID">
+   			<generator class="uuid.hex" />
+		</id>
+		
+		<!--  <many-to-one name="peopleId" class="JX_People" fetch="select" lazy="false" not-found="ignore">
+            <column name="PEOPLE_ID" not-null="false" />
+        </many-to-one>
+        -->
+        
+        <property name="peopleId" type="string">
+        <column name="PEOPLE_ID" not-null="true" />
+         </property> 
+        
+        <property name="departmentId" type="string">
+        <column name="DEP_ID" not-null="true" />
+         </property> 
+         
+          <property name="userId" type="string">
+        <column name="USER_ID" not-null="true" />
+         </property> 
+       <!--   <many-to-one name="departmentId" class="JX_Department" fetch="select" lazy="false" not-found="ignore">
+            <column name="DEP_ID" not-null="false" />
+        </many-to-one>
+        -->
+        
+        <property name="votesNumber" type="int">
+            <column name="VOTES_NUMBER" not-null="true">
+                <comment></comment>
+            </column>
+        </property> 
+        <property name="remark" type="string">
+            <column name="REMARK" not-null="false">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="voteTime" type="date">
+            <column name="VOTE_TIME" not-null="false">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="voteType" type="string">
+            <column name="VOTE_TYPE" not-null="false">
+                <comment></comment>
+            </column>
+        </property>
+        
+        <property name="tel" type="string">
+            <column name="TEL" not-null="false">
+                <comment></comment>
+            </column>
+        </property>
+        
+         <property name="name" type="string">
+            <column name="NAME" not-null="false">
+                <comment></comment>
+            </column>
+        </property>
+        
+    </class>
+</hibernate-mapping>

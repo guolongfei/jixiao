@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="SysUsers" table="system_users">
+		<comment></comment>
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+        <property name="name" type="string">
+            <column name="name" length="128">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="userName" type="string">
+            <column name="username" length="128">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="passWord" type="string">
+            <column name="password" length="128">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="groupName" type="string">
+            <column name="group_name" length="128">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="f2" type="string">
+            <column name="f2" length="255">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="userSex" type="string">
+            <column name="user_sex" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="userBirthday" type="date">
+            <column name="user_birthday">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="userZW" type="string">
+            <column name="userZW" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="userZC" type="string">
+            <column name="userZC" length="50">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="degree" type="string">
+            <column name="degree" length="50">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="polity" type="string">
+            <column name="polity" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="mobile1" type="string">
+            <column name="mobile1" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="mobile2" type="string">
+            <column name="mobile2" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="qq" type="string">
+            <column name="qq" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="msn" type="string">
+            <column name="msn" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="200">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="1000">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="zipCode" type="string">
+            <column name="zip_code" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="mark" type="string">
+            <column name="mark" length="2">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="loginTime" type="java.util.Date">
+            <column name="login_time" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="state" type="int">
+            <column name="state" length="1" not-null="true">
+            </column>
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time" not-null="false" />
+        </property>
+        <property name="addTime" type="java.util.Date">
+            <column name="add_time" not-null="true" />
+        </property>
+        <property name="prisonCode" type="java.lang.String">
+            <column name="prison_code" not-null="false" />
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+	</class>
+</hibernate-mapping>

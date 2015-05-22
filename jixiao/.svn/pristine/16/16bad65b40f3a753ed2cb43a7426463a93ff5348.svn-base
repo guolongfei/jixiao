@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hoyotech.prison.bean">
+	<class name="WorkUnit" table="work_unit">
+		<comment></comment>
+		<id name="id" column="id">
+   			<generator class="uuid.hex" />
+		</id>
+        <property name="unitName" type="string">
+            <column name="unit_name">
+            </column>
+        </property>
+        <property name="letters" type="string">
+            <column name="letters">
+            </column>
+        </property>
+        <property name="path" type="string">
+            <column name="path">
+            </column>
+        </property>
+        <property name="header" type="string">
+            <column name="header">
+            </column>
+        </property>
+        <property name="phone" type="string">
+            <column name="phone">
+            </column>
+        </property>
+         <property name="level" type="java.lang.Integer">
+            <column name="&quot;LEVEL&quot;">
+            </column>
+        </property>
+         <many-to-one name="parentUnit" class="WorkUnit" fetch="select" lazy="false">
+            <column name="parent_unit"/>
+        </many-to-one>
+		<property name="state" type="int">
+            <column name="state" length="1" not-null="true" default="1">
+            </column>
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time" not-null="false" />
+        </property>
+        <property name="addTime" type="java.util.Date">
+            <column name="add_time" not-null="true" />
+        </property>
+        <property name="prisonCode" type="java.lang.String">
+            <column name="prison_code" not-null="false" />
+        </property>
+        <property name="isSync" type="int">
+            <column name="is_sync" length="1" />
+        </property>
+	</class>
+</hibernate-mapping>

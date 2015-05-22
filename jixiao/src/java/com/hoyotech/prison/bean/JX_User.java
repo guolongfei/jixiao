@@ -1,0 +1,109 @@
+package com.hoyotech.prison.bean;
+
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
+import com.hoyotech.prison.log.PropertyName;
+
+public class JX_User {
+
+	@PropertyName(name = "ID")
+	private String id;
+	@PropertyName(name = "登录账号")
+	private String username;
+	@PropertyName(name = "登录密码")
+	private String password;
+	@PropertyName(name = "人员")
+	private JX_People jx_people;
+	@PropertyName(name = "角色")
+	private Set<JX_UserRole> roles = new HashSet<JX_UserRole>();		
+	@PropertyName(name = "创建时间")
+	private Date add_date; 
+	@PropertyName(name = "是否启用")
+	private int state;
+	@PropertyName(name = "在线状态")
+	private int online_state;
+	
+	public int getOnline_state() {
+		return online_state;
+	}
+
+	public void setOnline_state(int onlineState) {
+		online_state = onlineState;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+
+	public String getUsername() {
+		return username;
+	}
+
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	public JX_People getJx_people() {
+		return jx_people;
+	}
+	
+	public void setJx_people(JX_People jx_people) {
+		this.jx_people = jx_people;
+	}
+
+	public Date getAdd_date() {
+		return add_date;
+	}
+
+
+	public Set<JX_UserRole> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Set<JX_UserRole> roles) {
+		this.roles = roles;
+	}
+
+	public void setAdd_date(Date addDate) {
+		add_date = addDate;
+	}
+
+
+	public int getState() {
+		return state;
+	}
+
+
+	public void setState(int state) {
+		this.state = state;
+	}
+
+
+
+	public JX_User() {
+		
+	}
+
+
+
+
+	
+}
