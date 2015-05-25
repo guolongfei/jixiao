@@ -6,6 +6,7 @@
 			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
 <!--所有继承了service类都要在这写一个bean,id和service的接口初始化的变量名要相同 -->
+	<bean id="friendService" class="com.hoyotech.prison.service.impl.FriendService"></bean>
     <bean id="carService" class="com.hoyotech.prison.service.impl.CarService"></bean>	
     <bean id="medicalService" class="com.hoyotech.prison.service.impl.MedicalService"></bean>	
 	<bean id="dictionaryService" class="com.hoyotech.prison.service.impl.DictionaryService"></bean>	

@@ -6,6 +6,7 @@
 			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
 	<!-- 每次创建一个新的action类都必须在这里定义，struts.xml中的action中的class写这里的id -->
+	<bean id="mobileFriendAction" class="com.hoyotech.prison.action.MobileFriendAction" scope="prototype"></bean>
 	<bean id="mainAction" class="com.hoyotech.prison.action.MainAction" scope="prototype"></bean>
 	<bean id="prisonerMainAction" class="com.hoyotech.prison.action.PrisonerMainAction" scope="prototype"></bean>
 	<bean id="carAction" class="com.hoyotech.prison.action.CarAction" scope="prototype"></bean>

@@ -217,6 +217,15 @@ public class BasicDao extends HibernateDaoSupport {
 		// e.printStackTrace();
 		// }
 	}
+	
+	/**
+	 * 删除一条记录
+	 * 
+	 * @param obj
+	 */
+	public void delete(Object obj){
+		getHibernateTemplate().delete(obj);
+	}
 
 	/**
 	 * 执行hql语句，返回唯一结果

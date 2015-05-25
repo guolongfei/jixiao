@@ -42,6 +42,7 @@
 	</property>
 	<property name="mappingResources">
 		<list>
+			<value>com/hoyotech/prison/bean/JX_Friendship.hbm.xml</value>
 			<value>com/hoyotech/prison/bean/PrisonInfo.hbm.xml</value>
 			<value>com/hoyotech/prison/bean/Dictionary.hbm.xml</value>
 			<value>com/hoyotech/prison/bean/Prisoner.hbm.xml</value>
@@ -170,7 +171,7 @@
 	</bean>	
 
 	<!-- 定时器 ，获取当前在线人数-->
-	<bean id="onlien" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+	<bean id="online" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
 	<property name="targetObject" ref="OnLine_Test"></property><!-- 指定任务类 -->
 	<property name="targetMethod" value="getNumber"></property><!-- 指定任务方法 -->
 	</bean>

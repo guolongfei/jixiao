@@ -18,7 +18,9 @@ public class JX_People {
 	private Date add_date;
 	@PropertyName(name = "工作职责")
 	private String duty;
-
+	@PropertyName(name = "电话号码")
+	private String phonenumber;
+	
 	public JX_People() {
 
 	}
@@ -27,8 +29,13 @@ public class JX_People {
 		return id;
 	}
 
+	public String getPhoneNumber() {
+		return phonenumber;
+	}
 
-
+	public void setPhoneNumber(String phoneNumber) {
+		this.phonenumber = phoneNumber;
+	}
 
 	public void setId(String id) {
 		this.id = id;
